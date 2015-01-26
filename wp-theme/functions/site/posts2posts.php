@@ -1,60 +1,66 @@
 <?php
 
-function p2p_users_companies(){
+function p2p_macelree(){
 
-	// Users and Companies
+	// Posts and Attorneys
 	p2p_register_connection_type( array(
-	    'name' => 'businesses_user',
-	    'from' => 'businesses',
-	    'to' => 'user',
-	    'reciprocal' => true,
-
-		'fields' => array(
-	        'position' => array(
-	            'title' => 'Position at Company',
-	            'type' => 'text',
-	        ),
-	    ),
-
-	    'admin_box' => array(
-			'show' => 'any',
-			'context' => 'advanced'
-		)
+	    'name' => 'post_attorney',
+	    'from' => 'post',
+	    'to' => 'attorney'
 	) );
 
-	// Users and Organizations
+	// Posts and Practice Areas
 	p2p_register_connection_type( array(
-	    'name' => 'organizations_user',
-	    'from' => 'organizations',
-	    'to' => 'user',
-	    'reciprocal' => true,
-
-		'fields' => array(
-	        'position' => array(
-	            'title' => 'Role in Organization',
-	            'type' => 'text',
-	        ),
-	    ),
-
-	    'admin_box' => array(
-			'show' => 'any',
-			'context' => 'advanced'
-		)
+	    'name' => 'post_practice-area',
+	    'from' => 'post',
+	    'to' => 'practice-area'
 	) );
 
-	// Users and Events
+	// Posts and Offices
 	p2p_register_connection_type( array(
-	    'name' => 'events_user',
-	    'from' => 'tribe_events',
-	    'to' => 'user',
-	    'reciprocal' => true,
-
-	    'admin_box' => array(
-			'show' => 'any',
-			'context' => 'advanced'
-		)
+	    'name' => 'post_office',
+	    'from' => 'post',
+	    'to' => 'office',
+	    'reciprocal' => false
 	) );
+
+
+	// Attorney and Case Results
+	p2p_register_connection_type( array(
+	    'name' => 'attorney_case-result',
+	    'from' => 'attorney',
+	    'to' => 'case-result',
+	    'reciprocal' => true
+	) );
+
+
+	// Attorney and Office
+	p2p_register_connection_type( array(
+	    'name' => 'attorney_office',
+	    'from' => 'attorney',
+	    'to' => 'office',
+	    'reciprocal' => true
+	) );
+
+
+	// Attorney and Practice Area
+	p2p_register_connection_type( array(
+	    'name' => 'attorney_practice-area',
+	    'from' => 'attorney',
+	    'to' => 'practice-area',
+	    'reciprocal' => true
+	) );
+
+
+	// Case Result and Practice Area
+	p2p_register_connection_type( array(
+	    'name' => 'case-result_practice-area',
+	    'from' => 'case-result',
+	    'to' => 'practice-area',
+	    'reciprocal' => true
+	) );
+
 
 }
 
-add_action( 'p2p_init', 'p2p_users_companies' );
+add_action( 'p2p_init', 'p2p_macelree' );
