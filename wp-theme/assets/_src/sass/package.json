@@ -1,0 +1,15 @@
+{
+  "name": "40d-semantic-sass-structure",
+  "version": "0.1.0",
+  "description": "A starting point for SASS work.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:40digits/40d-semantic-sass-structure.git"
+  },
+  "author": "40Digits Interactive, LLC",
+  "license": "MIT"
+}

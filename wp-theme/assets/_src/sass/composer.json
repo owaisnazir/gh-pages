@@ -1,0 +1,17 @@
+{
+    "name": "40digits/40d-semantic-sass-structure",
+    "description": "A starting point for SASS work",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "40Digits Interactive, LLC",
+            "email": "hello@40digits.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "classmap": ["./"]
+    }
+}
