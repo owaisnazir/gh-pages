@@ -1,7 +1,7 @@
 {
   "name": "macelree-harvey",
   "version": "0.1.0",
-  "description": "A starting point for WordPress projects",
+  "description": "",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "echo \"TODO: Add tests \" && exit 1"
@@ -10,9 +10,9 @@
     "type": "git",
     "url": "git@bitbucket.org:40digits/helperpress.git"
   },
-  "author": "40Digits Interactive, LLC <hello@40digits.com> (http://www.40digits.com)",
+  "author": "Wehrenberg Design",
   "contributors": [
-    "Charlie Rosenbury <charlie@40digits.com> (http://rosenbury.com)"
+    "Charlie Rosenbury <charlie@selfinteractive.com> (http://rosenbury.com)"
   ],
   "license": "BSD-2-Clause",
   "dependencies": {
