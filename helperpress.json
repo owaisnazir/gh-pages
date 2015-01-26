@@ -1,0 +1,19 @@
+{
+  "theme_path": "wp-theme",
+  "css_path": "wp-theme/assets/_src/sass/style.scss",
+  "build_cmd": "grunt build_dist",
+  "build_cmd_dir": "./",
+  "wp": {
+    "theme": {
+      "slug": "macelree-harvey",
+      "name": "MacElree Harvey",
+      "desc": "A custom-built WordPress theme."
+    },
+    "plugins": [
+      "wordpress-seo",
+      "simple-page-ordering",
+      "duplicate-post",
+      "regenerate-thumbnails"
+    ]
+  }
+}
