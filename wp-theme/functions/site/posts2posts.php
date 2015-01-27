@@ -60,7 +60,6 @@ function p2p_macelree(){
 	    'reciprocal' => true
 	) );
 
-
 }
 
 add_action( 'p2p_init', 'p2p_macelree' );
