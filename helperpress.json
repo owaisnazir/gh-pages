@@ -1,4 +1,13 @@
 {
+  "environments": {
+    "development": {
+      "ssh": {
+        "host": "ftp2.ftptoyoursite.com"
+      },
+      "wp_path": "/www.macelreeharvey.com/web/content",
+      "home_url": "www.macelreeharvey.com.php53-13.dfw1-1.websitetestlink.com"
+    }
+  },
   "theme_path": "wp-theme",
   "css_path": "wp-theme/assets/_src/sass/style.scss",
   "build_cmd": "grunt build_dist",
@@ -15,8 +24,12 @@
       "duplicate-post",
       "regenerate-thumbnails",
       "posts-to-posts",
+      "wp-mail-smtp",
+      "really-simple-captcha",
+      "login-ninja",
       "https://www.dropbox.com/s/mo3x4e1wo34m0ug/advanced-custom-fields-pro.zip?dl=1",
-      "https://www.dropbox.com/s/0q88x18bspti4nf/gravityforms.zip?dl=1"
+      "https://www.dropbox.com/s/avs9h83q08gsbl2/gravity-forms-css-ready-selector.zip?dl=1",
+      "https://www.dropbox.com/s/9170mvkehl1txgs/gravityforms.zip?dl=1"
     ]
   }
 }
