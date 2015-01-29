@@ -33,10 +33,15 @@
     "load-grunt-tasks": "git+https://github.com/40Digits/load-grunt-tasks.git"
   },
   "devDependencies": {
-    "grunt-contrib-watch": "~0.6.1"
+    "grunt-contrib-watch": "~0.6.1",
+    "lodash": "^3.0.0",
+    "through": "^2.3.6",
+    "underscore-deep-extend": "0.0.5"
   },
   "config": {
-    "theme_path": "wp-theme"
+    "theme_path": "wp-theme",
+    "assets_dir": "wp-theme/assets",
+    "css_dir": "wp-theme"
   },
   "browserify": {
     "transform": [

@@ -7,13 +7,14 @@
       "wp_path": "/www.macelreeharvey.com/web/content",
       "home_url": "www.macelreeharvey.com.php53-13.dfw1-1.websitetestlink.com",
       "deploy_method": "rsync",
-      "migrate_uploads_method": "rsync",
-      "migrate_db_method": "ssh"
+      "migrate_uploads_method": "sftp",
+      "migrate_db_method": "plugin"
     }
   },
+  "db_master": "development",
   "theme_path": "wp-theme",
   "css_path": "wp-theme/assets/_src/sass/style.scss",
-  "build_cmd": "grunt build_dist",
+  "build_cmd": "grunt build_dist_assets",
   "build_cmd_dir": "./",
   "wp": {
     "theme": {
