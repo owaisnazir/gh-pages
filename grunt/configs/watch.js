@@ -14,17 +14,17 @@ module.exports = {
 		}
 	},
 
-	imagemin: {
-		files: [
-			// all images in the assets dir
-			'<%= helperpress.assets_dir %>/_src/**/*.{png,gif,jpg,jpeg}'
-		],
-		tasks: ['newer:imagemin:assets_dev'],
-		options: {
-			livereload: true,
-			atBegin: true
-		}
-	},
+	// imagemin: {
+	// 	files: [
+	// 		// all images in the assets dir
+	// 		'<%= helperpress.assets_dir %>/_src/**/*.{png,gif,jpg,jpeg}'
+	// 	],
+	// 	tasks: ['newer:imagemin:assets_dev'],
+	// 	options: {
+	// 		livereload: true,
+	// 		atBegin: true
+	// 	}
+	// },
 
 	files_reload: {
 		files: [
@@ -38,17 +38,17 @@ module.exports = {
 		}
 	},
 
-	browserify: {
-		files: [
-			// all js files in the js assets dir
-			'<%= helperpress.assets_dir %>/_src/js/**/*.js'
-		],
-		tasks: [
-			'browserify:dev'
-		],
-		options: {
-			livereload: true,
-			atBegin: true
-		}
-	}
+	// browserify: {
+	// 	files: [
+	// 		// all js files in the js assets dir
+	// 		'<%= helperpress.assets_dir %>/_src/js/**/*.js'
+	// 	],
+	// 	tasks: [
+	// 		'browserify:dev'
+	// 	],
+	// 	options: {
+	// 		livereload: true,
+	// 		atBegin: true
+	// 	}
+	// }
 };		

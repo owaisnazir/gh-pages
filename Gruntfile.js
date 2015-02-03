@@ -5,8 +5,7 @@ module.exports = function (grunt) {
 		glob = require('glob'),
 		_ = require('lodash'),
 		_deepExtend = require('underscore-deep-extend'),
-		loadGruntTasks = require('load-grunt-tasks'),
-		userhome = require('userhome');
+		loadGruntTasks = require('load-grunt-tasks');
 
 	// initialize _deepExtend into _ object
 	_.mixin({deepExtend: _deepExtend(_)});
@@ -23,20 +22,19 @@ module.exports = function (grunt) {
 		'cssmin:combine',
 
 		// JS
-		'browserify',
-		'uglify:browserify',
+		// 'browserify',
+		// 'uglify:browserify',
 
 		// Images
 		'imagemin:assets_dist'
 
 	]);
 
+	grunt.registerTask( 'default', 'watch' );
 
 
 
-	// default task is defined in ./grunt/tasks dir
-
-
+	gruntConfig.helperpress = grunt.file.readJSON('package.json').config;
 
 
 

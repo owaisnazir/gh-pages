@@ -25,6 +25,13 @@ remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'menus' );
 
+add_action( 'after_setup_theme', 'register_my_menu' );
+function register_my_menu() {
+  register_nav_menu( 'primary', 'Primary Menu' );
+  register_nav_menu( 'utility', 'Utility Menu' );
+  register_nav_menu( 'footer', 'Footer Menu' );
+}
+
 
 // ADD CUSTOM PHOTO CROPS
 if ( function_exists( 'add_image_size' ) ) {
@@ -41,10 +48,14 @@ include_once('functions/custom_sidebars.php');
 include_once('functions/wordpress/utility.php');
 
 // Add CPT icons as well as seperators to the admin menu
-include_once('functions/wordpress/admin-menu.php');
+// include_once('functions/wordpress/admin-menu.php');
 
 // ENVIRONMENT STUFF
-include_once('functions/environment.php');
+// include_once('functions/environment.php');
+
+include_once('functions/site/posts2posts.php');
+include_once('functions/site/acf.php');
+include_once('functions/site/filetypes.php');
 
 
 

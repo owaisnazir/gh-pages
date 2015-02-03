@@ -18,9 +18,8 @@
 		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/style.css" />
 	<!--<![endif]-->
 
-	<!--[if lt IE 9]>
-		<script src="<?php bloginfo('template_directory') ?>/assets/scripts/vendor/html5shiv.js"></script>
-	<![endif]-->
+	<!--[if (gte IE 6)&(lte IE 8)]> <script type="text/javascript" src="<?php bloginfo('template_directory') ?>/assets/js/vendor/selectivizr-1.0.2.min.js"></script> <![endif]-->
+    <script src="<?php bloginfo('template_directory') ?>/assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
 	<script>
 		// Place Google Analytics code here
@@ -39,3 +38,55 @@
 
 </head>
 <body <?php body_class(); ?>  id="<?php echo get_template_name(); ?>">
+<!--[if lt IE 8]> <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+
+
+<div id="top">
+
+    <header id="header">
+
+        <div class="top-navbar">
+
+            <div class="wrapper">
+
+                <nav class="utility-nav">
+
+                    <?php wp_nav_menu( array('theme_location' => 'utility' )); ?>
+
+                </nav>
+
+                <nav class="social-nav">
+
+                    <ul class="menu">
+                        <li class="sn-facebook"><a href="#">Facebook</a></li>
+                        <li class="sn-twitter"><a href="#">Twitter</a></li>
+                        <li class="sn-linkedin"><a href="#">Linked In</a></li>
+                        <li class="sn-youtube"><a href="#">You Tube</a></li>
+                    </ul>
+
+                </nav>
+
+            </div><!-- .wrapper -->
+
+        </div><!-- .top-navbar -->
+
+        <div class="wrapper">
+
+            <h1 class="branding"><a href="<?php bloginfo('url') ?>"><img src="<?php bloginfo('template_directory') ?>/images/macelree_logo.png" alt="MacElree Harvey" /></a></h1>
+
+            <nav class="global-nav">
+
+                <div class="container">
+
+                    <a class="toggle" href="#"><span class="visually-hidden">Menu</span><span aria-hidden="true" class="icon-menu icon"></span></a>
+
+
+                    <?php wp_nav_menu( array('theme_location' => 'primary' )); ?>
+
+                </div><!-- .container -->
+
+            </nav>
+
+        </div><!-- .wrapper -->
+
+    </header><!-- #header -->
