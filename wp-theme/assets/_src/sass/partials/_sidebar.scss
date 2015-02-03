@@ -2,10 +2,6 @@
 // SIDEBARS
 //----------------------------------
 #content {
-    .primary-content,
-    .secondary-content {
-        padding: 0 $gutter-large;
-    }
     @media (min-width: $mq-min-large) {
         .secondary-content {
             float: right;

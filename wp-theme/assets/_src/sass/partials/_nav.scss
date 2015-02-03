@@ -127,7 +127,7 @@
 .connect-nav {
     display: inline-block;
     vertical-align: top;
-    margin: $gutter-large 0;
+    margin: $gutter-large 0 $gutter;
     padding: 0;
     li {
         display: inline-block;
@@ -137,7 +137,7 @@
             position: relative;
             width:  40px;
             height: 40px;
-            margin: 0 2px;
+            margin: 0 1px 5px;
             font-size: 20px;
             text-decoration: none;
             text-align: left;
@@ -212,7 +212,7 @@
         .menu{
             position: absolute;
             z-index: 1000;
-            padding: 10px;
+            padding: 10px 10px 5px;
             top: 100%;
             width: 100%;
             margin-top: -5px;
