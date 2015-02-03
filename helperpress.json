@@ -23,9 +23,6 @@
       "desc": "A custom-built WordPress theme."
     },
     "plugins": [
-      "wordpress-seo",
-      "simple-page-ordering",
-      "duplicate-post",
       "regenerate-thumbnails",
       "posts-to-posts",
       "wp-mail-smtp",
@@ -33,7 +30,8 @@
       "https://www.dropbox.com/s/hdrjiitnhhijbuv/login-ninja.zip?dl=1",
       "https://www.dropbox.com/s/mo3x4e1wo34m0ug/advanced-custom-fields-pro.zip?dl=1",
       "https://www.dropbox.com/s/avs9h83q08gsbl2/gravity-forms-css-ready-selector.zip?dl=1",
-      "https://www.dropbox.com/s/9170mvkehl1txgs/gravityforms.zip?dl=1"
+      "https://www.dropbox.com/s/9170mvkehl1txgs/gravityforms.zip?dl=1",
+      "https://www.dropbox.com/s/36yb1ml8zyimazi/all-in-one-seo-pack-pro.zip?dl=1"
     ]
   }
 }
