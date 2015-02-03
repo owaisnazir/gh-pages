@@ -22,8 +22,8 @@ module.exports = function (grunt) {
 		'cssmin:combine',
 
 		// JS
-		'browserify',
-		'uglify:browserify',
+		// 'browserify',
+		// 'uglify:browserify',
 
 		// Images
 		'imagemin:assets_dist'
