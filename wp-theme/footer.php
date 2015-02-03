@@ -49,14 +49,8 @@
 
                 <nav class="footer-nav">
 
-                    <ul class="menu">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Attorneys</a></li>
-                        <li><a href="#">Experience</a></li>
-                        <li><a href="#">News &amp; Events</a></li>
-                        <li><a href="#">Social Responsibility</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+
+                    <?php wp_nav_menu( array('theme_location' => 'footer' )); ?>
 
                 </nav>
 
