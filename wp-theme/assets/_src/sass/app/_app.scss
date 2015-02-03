@@ -60,7 +60,7 @@
 
 .text-banner {
     margin: 0 0 $gutter-large;
-    padding: $gutter-large 0;
+    padding: $gutter-large;
     text-align: center;
     background-color: $color-light-blue;
     h1 {
@@ -125,9 +125,6 @@
     margin: 0 auto $gutter-large auto;
     .news-feature,
     .bio-feature {
-        display: inline-block;
-        vertical-align: top;
-        width: 50%;
         padding: 0 $gutter-large $gutter-large;
     }
     .news-feature {
@@ -141,12 +138,20 @@
     .bio-feature {
         padding-top: (2 * $gutter-large);
     }
+    @media (min-width: $mq-min-medium) {
+        .news-feature,
+        .bio-feature {
+            display: inline-block;
+            vertical-align: top;
+            width: 50%;
+        }
+    }
 }
 
 // Lawyer Pages
 .bio-card {
     overflow: hidden;
-    margin: 0 0 $gutter-large;
+    margin: 0 (-$gutter-large) $gutter-large;
     background-color: $color-light-blue;
     .details {
         padding: $gutter-large;
@@ -156,15 +161,31 @@
             color: $color-dark-grey;
         }
     }
+    .photo {
+        margin-top: (-$gutter-large);
+    }
+    @media (min-width: $mq-min-small) {
+        .photo {
+            margin-top: (-$gutter-large * 2);
+            padding: $gutter-large;
+            text-align: center;
+        }
+    }
     @media (min-width: $mq-min-large) {
+        margin-right: 0;
+        margin-left: 0;
         .details {
             float: left;
             width: 330px;
+            max-width: 33%;
             padding-bottom: 0;
         }
         .photo {
             float: right;
             width: 623px;
+            max-width: 67%;
+            margin-top: 0;
+            padding: 0;
         }
     }
 }
