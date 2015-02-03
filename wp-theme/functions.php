@@ -46,6 +46,10 @@ include_once('functions/wordpress/admin-menu.php');
 // ENVIRONMENT STUFF
 include_once('functions/environment.php');
 
+include_once('functions/site/posts2posts.php');
+include_once('functions/site/acf.php');
+include_once('functions/site/filetypes.php');
+
 
 
 // SECURITY STUFF

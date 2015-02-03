@@ -1,7 +1,20 @@
 {
+  "environments": {
+    "development": {
+      "ssh": {
+        "host": "ftp2.ftptoyoursite.com"
+      },
+      "wp_path": "/www.macelreeharvey.com/web/content",
+      "home_url": "www.macelreeharvey.com.php53-13.dfw1-1.websitetestlink.com",
+      "deploy_method": "rsync",
+      "migrate_uploads_method": "sftp",
+      "migrate_db_method": "plugin"
+    }
+  },
+  "db_master": "development",
   "theme_path": "wp-theme",
   "css_path": "wp-theme/assets/_src/sass/style.scss",
-  "build_cmd": "grunt build_dist",
+  "build_cmd": "grunt build_dist_assets",
   "build_cmd_dir": "./",
   "wp": {
     "theme": {
@@ -10,10 +23,15 @@
       "desc": "A custom-built WordPress theme."
     },
     "plugins": [
-      "wordpress-seo",
-      "simple-page-ordering",
-      "duplicate-post",
-      "regenerate-thumbnails"
+      "regenerate-thumbnails",
+      "posts-to-posts",
+      "wp-mail-smtp",
+      "really-simple-captcha",
+      "https://www.dropbox.com/s/hdrjiitnhhijbuv/login-ninja.zip?dl=1",
+      "https://www.dropbox.com/s/mo3x4e1wo34m0ug/advanced-custom-fields-pro.zip?dl=1",
+      "https://www.dropbox.com/s/avs9h83q08gsbl2/gravity-forms-css-ready-selector.zip?dl=1",
+      "https://www.dropbox.com/s/9170mvkehl1txgs/gravityforms.zip?dl=1",
+      "https://www.dropbox.com/s/36yb1ml8zyimazi/all-in-one-seo-pack-pro.zip?dl=1"
     ]
   }
 }
