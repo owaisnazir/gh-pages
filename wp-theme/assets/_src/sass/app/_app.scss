@@ -3,3 +3,290 @@
 //----------------------------------
 
 // Each page/section should have their own styling. Name your stylesheets so that they correspond with pages or template files.
+
+//----------------------------------
+// MODULAR ELEMENTS
+//----------------------------------
+// Home Page
+.hero-banner {
+    @include font-smoothing;
+    background-color: $color-dark-grey;
+    background-image: url('images/hero_bg_000.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    .caption {
+        position: relative;
+        max-width: 960px;
+        min-height: 400px;
+        margin: 0 auto;
+        padding: 30px $gutter-large;
+        text-align: center;
+        text-shadow: -1px 1px 6px rgba(0,0,0,0.8);
+        color: #fff;
+        h1 {
+            margin-top: 0;
+            font-size: 46px;
+            color: #fff;
+        }
+        p {
+            font-size: 24px;
+            line-height: 1.4;
+            .button {
+                padding: 10px 40px 12px;
+                text-transform: none;
+                color: #fff;
+                border-color: #fff;
+            }
+        }
+        @media (min-width: $mq-min-medium) {
+            padding-top: 60px;
+            h1 {
+                font-size: 70px;
+            }
+        }
+        @media (min-width: $mq-min-large) {
+            padding-top: 90px;
+            p.more-link {
+                position: absolute;
+                bottom: 40px;
+                left: 0;
+                right: 0;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.text-banner {
+    margin: 0 0 $gutter-large;
+    padding: $gutter-large 0;
+    text-align: center;
+    background-color: $color-light-blue;
+    h1 {
+        margin-top: 0;
+    }
+    h2 {
+        margin: 10px 0;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 1.6;
+        text-transform: none;
+        color: $color-dark-grey;
+    }
+    h3 {
+        margin: 0;
+        color: $color-dark-grey;
+    }
+    .phone-callouts {
+        @extend %naked-list;
+        text-align: center;
+        li {
+            @extend %naked-list;
+            display: inline-block;
+            vertical-align: top;
+            width: 100%;
+            margin: 0 0 $gutter-large;
+            @media (min-width: $mq-min-large) {
+                width: 33%;
+            }
+        }
+    }
+}
+
+.icon-callouts {
+    max-width: 1000px;
+    margin: 0 auto $gutter-large auto;
+    li {
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 $gutter-large;
+        a {
+            display: block;
+            position: relative;
+            padding: 0 0 0 78px;
+            text-decoration: none;
+            .icon {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+    @media (min-width: $mq-min-large) {
+        li {
+            width: 50%;
+        }
+    }
+}
+
+.home-featured {
+    max-width: 1000px;
+    margin: 0 auto $gutter-large auto;
+    .news-feature,
+    .bio-feature {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        padding: 0 $gutter-large $gutter-large;
+    }
+    .news-feature {
+        .post {
+            margin-bottom: $gutter-large;
+            p {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .bio-feature {
+        padding-top: (2 * $gutter-large);
+    }
+}
+
+// Lawyer Pages
+.bio-card {
+    overflow: hidden;
+    margin: 0 0 $gutter-large;
+    background-color: $color-light-blue;
+    .details {
+        padding: $gutter-large;
+        color: $color-dark-grey;
+        h1 {
+            margin-top: 0;
+            color: $color-dark-grey;
+        }
+    }
+    @media (min-width: $mq-min-large) {
+        .details {
+            float: left;
+            width: 330px;
+            padding-bottom: 0;
+        }
+        .photo {
+            float: right;
+            width: 623px;
+        }
+    }
+}
+
+.bio-thumb-list {
+    margin: $gutter-large (-$gutter-large);
+    text-align: center;
+    li {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 100%;
+        padding: $gutter;
+        a {
+            display: block;
+            max-width: 225px;
+            margin: 0 auto;
+            text-align: left;
+            text-decoration: none;
+            h4 {
+                position: relative;
+                margin: 5px 0 0;
+            }
+            &:hover h4:after {
+                content: "\0020";
+                display: block;
+                position: absolute;
+                top: -10px;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background-color: $color-href;
+            }
+        }
+    }
+    @media (min-width: $mq-min-small) {
+        li {
+            max-width: 50%;
+        }
+    }
+    @media (min-width: $mq-min-small) {
+        li {
+            max-width: 33.333333%;
+        }
+    }
+    @media (min-width: $mq-min-large) {
+        li {
+            max-width: 25%;
+        }
+    }
+}
+
+// Secondary Pages
+.banner-photo {
+    margin: 0 -20px $gutter-large;
+    @media (min-width: $mq-min-large) {
+        margin: 0 auto $gutter-large auto;
+    }
+}
+
+// Blog Entry
+.post {
+    h1 {
+        color: $color-pine-green;
+    }
+    .meta {
+        margin-top: (-$headline-bottom-margin);
+        font-size: 14px;
+        font-weight: 600;
+        color: $color-light-tan;
+    }
+}
+
+//----------------------------------
+// FORMS AND BUTTONS
+//----------------------------------
+// Buttons
+.button,
+.button:visited {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: 0.7em 1.75em 0.7em;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    outline: 0;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.button:hover,
+.button:focus{text-decoration:none;color:inherit;background-image:-webkit-gradient(linear,0 0,0 100%,from(transparent),color-stop(40%,rgba(0,0,0,0.05)),to(rgba(0,0,0,0.10)));background-image:-webkit-linear-gradient(transparent,rgba(0,0,0,0.05) 40%,rgba(0,0,0,0.10));background-image:-moz-linear-gradient(top,rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.10));background-image:-o-linear-gradient(transparent,rgba(0,0,0,0.05) 40%,rgba(0,0,0,0.10));background-image:linear-gradient(transparent,rgba(0,0,0,0.05) 40%,rgba(0,0,0,0.10));}
+.button:active{position:relative;top:1px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.15),inset 0 0 6px rgba(0,0,0,0.20);}
+.button[disabled],
+.button[disabled]:hover,
+.button[disabled]:focus,
+.button[disabled]:active{opacity:0.5;color:#aaa;background:#999;border-color:#999;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;cursor:not-allowed;}
+
+// Button [color options]
+.button,
+.button:visited {
+    text-transform: uppercase;
+    color: $color-light-tan;
+    border: 1px solid #7C7974;
+    background-color: transparent;
+}
+
+.primary-button,
+.primary-button:visited {
+    color: #fff;
+    @include font-smoothing;
+    border: 1px solid $color-dark-blue;
+    background-color: $color-dark-blue;
+}
+.primary-button:hover,
+.primary-button:focus {
+    text-shadow: 1px 1px 6px #333;
+    box-shadow: 1px 1px 6px #333;
+}

@@ -5,37 +5,35 @@
 // These mixins and placeholders will make your development process easier.
 // Place any and all utilities here.
 
-// Clear Placeholder
+// Clearfix Placeholder
 %cf {
-	zoom: 1;
-	&:before,
-	&:after {
-		content: "";
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
+    &:before,
+    &:after {
+        content: "\0020";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }
 
-// Clear Mixin
+// Clearfix Mixin
 @mixin cf {
-	zoom: 1;
-	&:before,
-	&:after {
-		content: "";
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
+    &:before,
+    &:after {
+        content: "\0020";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }
 
 // Font smoothing for OSX primarily
 @mixin font-smoothing {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 
 // Absolute center content
@@ -50,14 +48,15 @@
 
 // Hide something to where it is still accessible on screen readers.
 %visuallyhidden {
-	margin: -1px;
-	padding: 0;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	clip: rect(0, 0, 0, 0);
-	position: absolute;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
 }
 
 //----------------------------------
@@ -104,9 +103,10 @@
 
 // Remove all list styling
 %naked-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+    margin:0;
+    padding:0;
+    list-style:none;
+    list-style-image:none;
 }
 
 // Remove all button styling and reset it to default

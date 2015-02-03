@@ -2,145 +2,169 @@
 // DEFAULTS GLOBAL
 //----------------------------------
 
-//----------------------------------
-// HELPERS
-//----------------------------------
+// Apply a natural box layout model to all elements, but allowing components to change
+html{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+*,*:before,*:after{box-sizing:inherit;}
 
-// Box Sizing
-*, *:before, *:after {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-
-	@include mq-print {
-		background: transparent !important;
-		color: #000 !important;
-		text-shadow: none !important;
-		filter: none !important;
-		-ms-filter: none !important
-	}
-}
-
+// [RS] Isn't this useful sometimes?
 // Hide tap on touch devices.
-* {
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+//*{-webkit-tap-highlight-color:rgba(0,0,0,0);}
 
 html {
-	text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
+    text-rendering: optimizeLegibility !important;
+
+    // [RS] Shouldn't this only be used for light text on dark backgrounds?
+    // -webkit-font-smoothing: antialiased !important;
 
     // if you want to use rem sizing, uncomment these and customize
     // font-size: $font-size-default;
 
     // +mq-min-medium {
-    // 	font-size: $font-size-large;
+    //     font-size: $font-size-large;
     // }
 }
 
+// Wrapper Class
+.wrapper {
+    @extend %cf;
+    width: 100%;
+    max-width:960px;
+    margin: 0 auto;
+    padding: 0;
+    #content & {
+        max-width: 1000px;
+        padding: 0 20px;
+    }
+    #content > & {
+        padding-bottom: (2 * $gutter-large);
+    }
+}
 
 //----------------------------------
-// GENERAL
+// Typography
 //----------------------------------
-
 body {
-	background: #fff;
-	font-size: $font-size-default;
-	color: #000;
-
-	@include mq-print {
-		width: 8in;
-	}
+    font-family: 'Open Sans', sans-serif;
+    font-size: $font-size-default;
+    font-weight: 400;
+    color: #444;
+    background:#fff;
 }
 
+// Anchor Links
 a {
-	color: $color-href;
-	text-decoration: none;
-
-	&:hover {
-		color: $color-href-hover;
-	}
+    color: $color-href;
+    text-decoration: underline;
+    background: transparent;
+    &:visited {
+        color: $color-href-visited;
+        text-decoration: none;
+    }
+    &:hover {
+        color: $color-href-hover;
+        text-decoration: none;
+    }
+    &:focus{outline:thin dotted;}
+    &:active,
+    &:hover{outline:0;}
 }
 
-img {
-	max-width: 100%;
-	height: auto;
-}
-
-hr {
-	margin: 1em 0;
-	border: 0;
-	border-bottom: 1px solid #a4abba;
-}
-
-//----------------------------------
-// HEADLINES
-//----------------------------------
-
+// Headings
 h1, h2, h3, h4, h5, h6 {
-	position: relative;
-	line-height: $headline-line-height;
-	margin-bottom: $headline-bottom-margin;
-
-	a {
-		color: $color-href;
-	}
+    margin: $paragraph-bottom-margin 0 $headline-bottom-margin;
+    font-weight: 600;
+    line-height: $headline-line-height;
+    a {
+        color: $color-href;
+    }
 }
-
-//----------------------------------
-// TEXT COMPONENTS
-//----------------------------------
-
-p, dl {
-	font-size: 1em;
-	line-height: 1.5em;
-	margin-bottom: $paragraph-bottom-margin;
+h1 {
+    margin-top: 1em;
+    font-size: 30px;
+    color: $color-dark-blue;
+    em {
+        display: block;
+        margin: 0;
+        font-size: 24px;
+        font-weight: 400;
+        text-transform: none;
+    }
 }
-
-i, em {
-	font-style: italic;
+h2 {
+    margin: $paragraph-bottom-margin 0 ($paragraph-bottom-margin / 2);
+    font-size: 24px;
+    font-weight: 400;
+    color: $color-dark-blue;
 }
-
-b, strong {
-	font-weight: bold;
+h3 {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: $color-dark-blue;
+    em {
+        display: block;
+        margin: $headline-bottom-margin 0;
+        font-weight: 400;
+        text-transform: none;
+    }
 }
+h4{font-size:20px;}
+h5{font-size:18px;text-transform:uppercase;}
+h6{font-size:18px;}
 
-//----------------------------------
-// LIST STYLES
-//----------------------------------
-
-ul, ol, dd {
-	line-height: 1.5em;
+// Specific Typography
+p,ul,ol,dl,table,pre,code,samp,address {
+    margin: 0 0 $paragraph-bottom-margin;
+    padding: 0;
+    font-size: $font-size-default;
+    line-height: $font-line-height;
 }
-
-ul, ol {
-	margin-bottom: 1.625em;
-	padding-left: 20px;
+li{margin-left:20px;}
+dt{margin:0;font-weight:bold;}
+dd{margin:0 0 0 40px;}
+blockquote{margin:1em 40px;font-family:Georgia,'Times New Roman',Times,serif;font-size:20px;line-height:1.5;font-style:italic;}
+cite{font-size:85%;font-style:italic;}
+blockquote cite{display:block;font-family:sans-serif;font-style:normal;text-align:right;}
+pre{display:block;padding:1em;border:1px solid #ccc;background-color:#eee;}
+code{color:#06f;}
+hr,.hr {
+    display: block;
+    height: 1px;
+    margin: $paragraph-bottom-margin 0;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid #ccc;
 }
+.hr hr{display:none;}
+img{max-width:100%;height:auto;}
 
-li {
-	font-size: inherit;
-	line-height: 1.5em;
+// Tables Defaults
+table{max-width:100%;}
+th, td {
+    vertical-align: top;
+    padding: 5px $gutter-large 5px 0;
 }
-
-ol {
-	list-style-type: decimal;
-}
-ul {
-	list-style-type: disc;
-}
-
 
 //----------------------------------
 // CLASS HELPERS
 //----------------------------------
+.responsive-table{max-width:100%;overflow-x:auto;}
 
-// Clear class helpers
-.cf, .clear {
-	@extend %cf;
-}
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+.browsehappy{margin:0.2em 0;background:#ccc;color:#000;padding:0.2em;}
+
+.ir{background-color:transparent;border:0;overflow:hidden;}
+.ir:before{content:"";display:block;width:0;height:150%;}
+.hidden{display:none !important;visibility:hidden;}
+.invisible{visibility:hidden;}
 
 // Visually hide elements while at the same time make them accessible on screen readers
 .visually-hidden {
-	@extend %visuallyhidden;
+    @extend %visuallyhidden;
+    &.focusable:active,
+    &.focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto;}
+}
+
+// Clearfix h5bp.com/q
+.cf, .clear, .clearfix {
+    @extend %cf;
 }

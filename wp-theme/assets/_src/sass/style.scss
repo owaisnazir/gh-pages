@@ -1,25 +1,24 @@
 /*! ---HelperPress Theme Config Start---
-	Theme Name: MacElree Harvey
-	Author: Wehrenberg Design
-	Author URI: 
-	Description: 
-	Version: 0.1.0
-	License: BSD-2-Clause
-	License URI: http://lmgtfy.com/?q=BSD-2-Clause
-	Text Domain: macelree-harvey
+    Theme Name: MacElree Harvey
+    Author: Wehrenberg Design
+    Author URI: 
+    Description: 
+    Version: 0.1.0
+    License: BSD-2-Clause
+    License URI: http://lmgtfy.com/?q=BSD-2-Clause
+    Text Domain: macelree-harvey
 ---HelperPress Theme Config End--- */
 
 //----------------------------------
-// COMPASS
+// GLOBAL
 //----------------------------------
 
+// @import "mixins/mix-fonts";
+@import "partials/webfonts";
 @import "vendor/normalize";
-// @import "compass/reset";
-// @import "compass/css3/transform";
-// @import "compass/css3/transition";
 
 //----------------------------------
-// Variables
+// VARIABLES
 //----------------------------------
 
 @import "modules/variables";
@@ -30,7 +29,6 @@
 //----------------------------------
 
 @import "mixins/mix-media-queries";
-@import "mixins/mix-fonts";
 @import "mixins/mix-utilities";
 @import "mixins/mix-general";
 
@@ -40,11 +38,11 @@
 
 // Default Modules
 @import "modules/defaults";
-@import "modules/input";
-@import "modules/js-breakpoints";
+// @import "modules/input";
+// @import "modules/js-breakpoints";
 
 // WordPress
-@import "modules/wordpress-default";
+// @import "modules/wordpress-default";
 
 // Optional Modules
 // @import "modules/keyframes";
@@ -63,8 +61,8 @@
 // VENDOR
 //----------------------------------
 
-@import "vendor/vendor";
-@import "vendor/gravity-forms";
+// @import "vendor/vendor";
+// @import "vendor/gravity-forms";
 
 //----------------------------------
 // APP
@@ -73,7 +71,7 @@
 @import "app/app";
 
 //----------------------------------
-// INTERNET EXPLORER
+// PRINT STYLES
 //----------------------------------
 
-@import "app/ie";
+@import "modules/print";

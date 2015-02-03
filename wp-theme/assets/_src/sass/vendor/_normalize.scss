@@ -1,18 +1,14 @@
+//----------------------------------
+// NORMALIZE
+//----------------------------------
 
-/*
-}------------------------------------------------------------------------------
----- Normalize v3.0.1 [modified] {
----------------------------------------------------------------------------- */
+/*---------------------------------------------------------------------------*/
 /*  Modified version of Normalize.css and HTML5boilerplate.                  */
 /*  ! normalize.css v3.0.1 | MIT License | git.io/normalize                  */
 /*  ! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/              */
+/*---------------------------------------------------------------------------*/
 
-/* Natural box layout model to all elements
----------------------------------------------------------------------------- */
-*,*:after,*:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
-
-/* HTML5 display definitions
----------------------------------------------------------------------------- */
+// HTML5 display definitions
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}
 figure{margin:1em 40px;}
 audio,canvas,progress,video{display:inline-block;vertical-align:middle;}
@@ -20,13 +16,11 @@ audio:not([controls]){display:none;height:0;}
 [hidden],template{display:none;}
 svg:not(:root){overflow:hidden;}
 
-/* Base
----------------------------------------------------------------------------- */
+// Base
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
-body{margin:0;font-size:62.5%;line-height:1;}/* 62.5% sets 1em=10px */
+body{margin:0;font-size:62.5%;line-height:1;} // 62.5% sets 1em=10px
 
-/* Typography
----------------------------------------------------------------------------- */
+// Typography
 html,button,input,select,textarea{font-family:sans-serif;color:#222;}
 html{font-size:1em;line-height:1.4;}
 ::-moz-selection{background:#b3d4fc;text-shadow:none;}
@@ -46,13 +40,11 @@ img{border:0;vertical-align:middle;}
 iframe{border:0;}
 hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}
 
-/* Tables
----------------------------------------------------------------------------- */
+// Tables
 table{border-collapse:collapse;border-spacing:0;}
 tfoot{font-size:90%;font-style:italic;}
 
-/* Forms
----------------------------------------------------------------------------- */
+// Forms
 fieldset{margin:0;padding:0;border:0;}
 legend{padding:0;border:0;}
 button,input,optgroup,select,textarea{font:inherit;color:inherit;margin:0;}
@@ -72,4 +64,3 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}
 textarea{overflow:auto;vertical-align:top;resize:vertical;}
 optgroup{font-weight:bold;}
 label{cursor:pointer;}
-

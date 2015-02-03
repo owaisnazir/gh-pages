@@ -1,3 +1,61 @@
 //----------------------------------
 // SIDEBARS
 //----------------------------------
+#content {
+    .primary-content,
+    .secondary-content {
+        padding: 0 $gutter-large;
+    }
+    @media (min-width: $mq-min-large) {
+        .secondary-content {
+            float: right;
+            width: 33.333333%;
+            padding-right: 0;
+            padding-left: $gutter-large;
+        }
+        .primary-content {
+            float: left;
+            width: 66.666666%;
+            padding-right: $gutter-large;
+            padding-left: 0;
+        }
+    }
+}
+
+.accordion-tabs {
+    margin-top: $gutter-large;
+    .accordion-toggle {
+        position: relative;
+        margin: 0 0 $gutter;
+        padding: 4px 24px 4px 4px;
+        background: $color-light-blue;
+        cursor: pointer;
+        &:after {
+            content: "\e80b";
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            width: 1em;
+            height: 1em;
+            margin-top: -8px;
+            font-size: 16px;
+            @include font-icons;
+        }
+        &.open:after {
+            content: "\e80c";
+        }
+    }
+    .accordion-content {
+        display: none;
+        padding: 0 0 $gutter;
+        p {
+            margin-bottom: $gutter;
+        }
+        &.open {
+            display: block;
+        }
+    }
+}
+
+

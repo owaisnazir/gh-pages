@@ -1,0 +1,21 @@
+//----------------------------------
+// PRINT STYLES
+//----------------------------------
+
+@media print{
+    *{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important;}
+    a,a:visited{text-decoration:underline;}
+    pre,blockquote{border:1px solid #999;page-break-inside:avoid;}
+    thead{display:table-header-group;}
+    tr,img{page-break-inside:avoid;}
+    img{max-width:100% !important;}
+    p,h2,h3{orphans:3;widows:3;}
+    h2,h3{page-break-after:avoid;}
+    /* Show URLs and Abbreviations */
+    a[href]:after{content:" (" attr(href) ")";}
+    abbr[title]:after{content:" (" attr(title) ")";}
+    /* Don't show URLs for images,or javascript/internal links */
+    .ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:"";}
+    /* Don't show URLs for site navigation */
+    #header a:after,#footer a:after,nav a:after,.menu a:after{content:"";}
+}
