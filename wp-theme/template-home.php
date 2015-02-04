@@ -26,7 +26,8 @@ get_header();
 
             <div class="wrapper">
 
-                <h2>With roots that reach back to 1880, MacElree Harvey uses the traditional values of professionalism and excellence as the foundation for the firm&rsquo;s identity. Our attorneys are encouraged to build on these traditional values through Initiative &ndash; creative problem-solving, proactive planning, and strategic positioning.</h2>
+                <?php echo apply_filters('the_content', get_field('video_highlight')); ?>
+                <h2><?php the_field('elevator_pitch') ?></h2>
 
             </div><!-- .wrapper -->
 
@@ -34,47 +35,28 @@ get_header();
 
         <div class="icon-callouts">
 
-            <ul class="menu"><li>
-                    <a href="#">
-                        <div class="icon">
-                            <img src="http://placehold.it/62x62/CCCCCC/969696.png" alt="" />
-                        </div>
-                        <div class="caption">
-                            <h3>Business</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
-                        </div>
-                    </a>
-                </li><li>
-                    <a href="#">
-                        <div class="icon">
-                            <img src="http://placehold.it/62x62/CCCCCC/969696.png" alt="" />
-                        </div>
-                        <div class="caption">
-                            <h3>Estates &amp; Trusts</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
-                        </div>
-                    </a>
-                </li><li>
-                    <a href="#">
-                        <div class="icon">
-                            <img src="http://placehold.it/62x62/CCCCCC/969696.png" alt="" />
-                        </div>
-                        <div class="caption">
-                            <h3>Litigation</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
-                        </div>
-                    </a>
-                </li><li>
-                    <a href="#">
-                        <div class="icon">
-                            <img src="http://placehold.it/62x62/CCCCCC/969696.png" alt="" />
-                        </div>
-                        <div class="caption">
-                            <h3>Land Development</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
-                        </div>
-                    </a>
-                </li></ul>
+            <ul class="menu">
+                <?php
+
+                $practice_areas = get_field('highlighted_practice_areas');
+
+                var_dump($practice_areas);
+
+                foreach($practice_areas as $p_area){
+                    ?><li>
+                        <a href="<?php echo get_permalink($p_area->ID) ?>">
+                            <div class="icon">
+                                <img src="<?php the_field('icon', $p_area->ID) ?>" alt="<?php echo $p_area->post_title ?>" />
+                            </div>
+                            <div class="caption">
+                                <h3><?php echo $p_area->post_title ?></h3>
+                                <p><?php the_field('short_description', $p_area->ID); ?></p>
+                            </div>
+                        </a>
+                    </li><?php
+                }
+                ?>
+                </ul>
             <!-- Spaces removed for inline-block -->
 
         </div><!-- .icon-callouts -->
@@ -86,24 +68,24 @@ get_header();
                 <h1>Call Us</h1>
 
                 <ul class="phone-callouts">
-                    <li>
-                        <h3>
-                            West Chester, PA<br />
-                            610.436.0100
-                        </h3>
-                    </li>
-                    <li>
-                        <h3>
-                            Kennett Square, PA<br />
-                            610.444.3180
-                        </h3>
-                    </li>
-                    <li>
-                        <h3>
-                            Centreville, DE<br />
-                            302.654.4454
-                        </h3>
-                    </li>
+                    <?php
+
+                    $locs = new WP_Query(array(
+                        'post_type' => 'office'
+                    ));
+
+                    while($locs->have_posts()){
+                        $locs->the_post();
+                        ?>
+                        <li>
+                            <h3>
+                                <?php the_title() ?><br />
+                                <?php the_field('phone') ?>
+                            </h3>
+                        </li>
+                        <?php
+                    }
+                    ?>
                 </ul>
 
             </div><!-- .wrapper -->
@@ -116,47 +98,58 @@ get_header();
 
                 <h1>Recent News &amp; Events</h1>
 
-                <div class="post">
+                <?php
 
-                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud [...]</p>
-                    <p class="meta">Posted January 14, 2015</p>
+                $news = new WP_Query(array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 3
+                ));
 
-                </div><!-- .post -->
+                while($news->have_posts()){
+                    $news->the_post();
+                    ?>
+                    <div class="post">
 
-                <div class="post">
+                        <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+                        <?php the_excerpt() ?>
+                        <p class="meta">Posted <?php echo get_the_date() ?></p>
 
-                    <h2>Consectetur adipiscing elit lorem ipsum dolor sit amet</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis [...]</p>
-                    <p class="meta">Posted January 14, 2015</p>
+                    </div><!-- .post -->
+                    <?php
+                }
+                ?>
 
-                </div><!-- .post -->
-
-                <div class="post">
-
-                    <h2>Ipsum dolor sit amet: consectetur adipiscing elit</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam [...]</p>
-                    <p class="meta">Posted January 14, 2015</p>
-
-                </div><!-- .post -->
-
-                <p><a class="button" href="#">Learn More&hellip;</a></p>
+                <p><a class="button" href="<?php bloginfo('url') ?>/news/">Learn More&hellip;</a></p>
 
             </div><!-- .news-feature --><div class="bio-feature">
             <!-- Spaces removed for inline-block -->
 
-                <img src="http://placehold.it/225x250/CCCCCC/969696.png" alt="" />
+                <?php
 
-                <h5>Attorney Spotlight</h5>
+                $featured_att = new WP_Query(array(
+                    'post_type' => 'attorney',
+                    'posts_per_page' => 1,
+                    'orderby' => 'rand'
+                ));
 
-                <h1>
-                    A. Duie Latta
-                    <em>Partner</em>
-                </h1>
+                while($featured_att->have_posts()){
+                    $featured_att->the_post();
+                    ?>
+                    <img src="<?php the_field('photos') ?>" alt="<?php the_title() ?>" />
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud [...]</p>
+                    <h5>Attorney Spotlight</h5>
 
-                <p><a class="button" href="#">Learn More&hellip;</a></p>
+                    <h1>
+                        <?php the_title() ?>
+                        <em><?php the_field('title') ?></em>
+                    </h1>
+
+                    <p><?php the_field("short_intro_bio") ?></p>
+
+                    <p><a class="button" href="<?php the_permalink() ?>">Learn More&hellip;</a></p>
+                    <?php
+                }
+                ?>
 
             </div><!-- .bio-feature -->
 
