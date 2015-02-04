@@ -89,7 +89,6 @@
 </div><!-- #top -->
 
     <?php wp_footer(); ?>
-    <script src="<?php bloginfo('template_directory') ?>/assets/js/vendor/jquery-1.11.1.min.js"></script>
     <script src="<?php bloginfo('template_directory') ?>/assets/js/plugins.js"></script>
     <script src="<?php bloginfo('template_directory') ?>/assets/js/main.js"></script>
 
