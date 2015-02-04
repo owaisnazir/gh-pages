@@ -30,7 +30,7 @@
 
                 <h4><a href="<?php bloginfo('url') ?>/practice-area/">Practice Areas</a></h4>
 
-                <ul>
+                <ul class="menu">
                     <?php
 
                     $pa = new WP_Query(array(
