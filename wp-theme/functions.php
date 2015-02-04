@@ -32,6 +32,8 @@ function register_my_menu() {
   register_nav_menu( 'footer', 'Footer Menu' );
 }
 
+register_sidebar(array('id'=>'general-sidebar', 'name' => 'General Sidebar'));
+
 
 // ADD CUSTOM PHOTO CROPS
 if ( function_exists( 'add_image_size' ) ) {
