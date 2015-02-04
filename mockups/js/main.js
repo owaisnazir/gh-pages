@@ -26,5 +26,4 @@
         pauseOnHover: true
     });
 
-
 })( this, jQuery );
