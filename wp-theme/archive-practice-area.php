@@ -6,7 +6,7 @@
            <div class="banner-photo">
 
             <?php
-            $banner_src = get_field('attorneys_header_image', 'options');
+            $banner_src = get_field('practice_areas_header_image', 'options');
             if(strlen($banner_src) == 0)
                 $banner_src = get_field('default_page_header_image', 'options');
             ?>
@@ -14,7 +14,7 @@
 
             </div><!-- .banner-photo -->
 
-            <h1>Our Attorneys</h1>
+            <h1>Practice Areas</h1>
 
             <ul class="bio-thumb-list menu"><?php
 

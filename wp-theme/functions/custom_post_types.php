@@ -104,9 +104,9 @@ function register_CPTs()
 		'show_in_nav_menus' => true,
 		'query_var' => true,
 		'rewrite' => Array('slug'=>'practice-area'),
-		'capability_type' => 'post',
+		'capability_type' => 'page',
 		'has_archive' => true,
-		'hierarchical' => false,
+		'hierarchical' => true,
 		'menu_position' => 21,
 		'supports' => array('title','page-attributes')
 	);
