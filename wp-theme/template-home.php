@@ -40,8 +40,6 @@ get_header();
 
                 $practice_areas = get_field('highlighted_practice_areas');
 
-                var_dump($practice_areas);
-
                 foreach($practice_areas as $p_area){
                     ?><li>
                         <a href="<?php echo get_permalink($p_area->ID) ?>">
