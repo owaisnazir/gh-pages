@@ -1,4 +1,7 @@
-<?php get_header() ?>
+<?php
+get_header();
+the_post();
+?>
  <div id="content">
 
         <div class="wrapper">
@@ -14,70 +17,41 @@
 
             </div><!-- .banner-photo -->
 
-            <h1><?php the_title()) ?></h1>
+            <div class="primary-content">
 
-            <?php the_content() ?>
+                <h1><?php the_title() ?></h1>
+
+                <?php the_content() ?>
 
             </div><!-- .primary-content -->
 
             <div class="secondary-content">
 
-                <div class="accordion-tabs">
+                <?php
+                if ( have_rows('sidebar_sections') ) {
+                    ?>
+                    <div class="accordion-tabs">
 
-                    <h4 class="accordion-toggle open">Practice Areas</h4>
+                        <?php
 
-                    <div class="accordion-content open">
+                        // loop through the rows of data
+                        while ( have_rows('sidebar_sections') ) : the_row();
 
-                        <ul class="menu">
-                            <li><a href="#">Closely Held and Family Businesses</a></li>
-                            <li><a href="#">Business and Corporate Law</a></li>
-                            <li><a href="#">Estate and Business Succession Planning</a></li>
-                            <li><a href="#">Non-Profit &amp; Charitable Organization Law</a></li>
-                            <li><a href="#">Real Estate and Construction Law</a></li>
-                        </ul>
+                            echo '<h4 class="accordion-toggle">' . get_sub_field('section_title') . '</h4>';
+                            echo '<div class="accordion-content">';
+                                the_sub_field('content');
+                            echo '</div>';
 
+                        endwhile;
+
+                        ?>
                     </div>
+                    <?php
+                }
+                ?>
 
-                    <h4 class="accordion-toggle">Education</h4>
-
-                    <div class="accordion-content">
-
-                        <p>Villanova University School of Law</p>
-                        <p>Grove City College <br /><em>Philosophy</em></p>
-
-                    </div>
-
-                    <h4 class="accordion-toggle">Admissions</h4>
-
-                    <div class="accordion-content">
-
-                        <p>Something Here</p>
-
-                    </div>
-
-                    <h4 class="accordion-toggle">Top Lawyers</h4>
-
-                    <div class="accordion-content">
-
-                        <p>Something Here</p>
-
-                    </div>
-
-                    <h4 class="accordion-toggle">Super Lawyers</h4>
-
-                    <div class="accordion-content">
-
-                        <p>Something Here</p>
-
-                    </div>
-
-                </div><!-- .accordian-tabs -->
-
-                <img src="http://placehold.it/140x240/CCCCCC/969696.png" alt="" />
-
-                <ul class="menu">
-                    <li><a href="#">Newsletter Signup</a></li>
-                    <li><a href="#">Download Attorney Bio</a></li>
+                <ul class="sidebar menu">
+                    <?php dynamic_sidebar( 'general-sidebar' ); ?>
                 </ul>
 
             </div><!-- .secondary-content -->
