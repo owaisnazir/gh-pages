@@ -91,3 +91,5 @@ Thumbs.db
 # Local site config
 /helperpress.local.json
 #### END HelperPress Rules ####
+
+.git-ftp-tmp

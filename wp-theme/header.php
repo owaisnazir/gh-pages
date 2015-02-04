@@ -58,10 +58,10 @@
                 <nav class="social-nav">
 
                     <ul class="menu">
-                        <li class="sn-facebook"><a href="#">Facebook</a></li>
-                        <li class="sn-twitter"><a href="#">Twitter</a></li>
-                        <li class="sn-linkedin"><a href="#">Linked In</a></li>
-                        <li class="sn-youtube"><a href="#">You Tube</a></li>
+                        <li class="sn-facebook"><a href="<?php the_field('facebook_url', 'option') ?>">Facebook</a></li>
+                        <li class="sn-twitter"><a href="<?php the_field('twitter_url', 'option') ?>">Twitter</a></li>
+                        <li class="sn-linkedin"><a href="<?php the_field('linkedin_url', 'option') ?>">Linked In</a></li>
+                        <li class="sn-youtube"><a href="<?php the_field('youtube_url', 'option') ?>">You Tube</a></li>
                     </ul>
 
                 </nav>
