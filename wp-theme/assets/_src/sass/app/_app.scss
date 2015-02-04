@@ -11,7 +11,7 @@
 .hero-banner {
     @include font-smoothing;
     background-color: $color-dark-grey;
-    background-image: url('images/hero_bg_000.png');
+    background-image: url('images/hero_bg_000.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -57,6 +57,127 @@
         }
     }
 }
+
+// Flexslider Slideshow
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+    @extend %cf;
+    @extend %naked-list;
+    > li {
+        @extend %naked-list;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+.slideshow {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.slides {
+    > li {
+        display:none;
+        -webkit-backface-visibility:hidden;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    .no-js & > li:first-child {
+        display: block;
+    }
+}
+
+.flex-control-nav {
+    display: none;
+}
+
+// Prev/Next Buttons
+.flex-direction-nav{*height:0;}
+.flex-direction-nav a {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    height: 100%;
+    z-index: 1000;
+    overflow: hidden;
+    opacity: 0;
+    text-decoration: none;
+    cursor: pointer;
+    outline: 0;
+    color: rgba(0,0,0,0.8);
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.3);
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.flex-direction-nav .flex-prev {
+    left: -50px;
+
+    background: -moz-linear-gradient(left,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+    background: -o-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+    background: -ms-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to right,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
+
+}
+.flex-direction-nav .flex-next {
+    right: -50px;
+
+    background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65)));
+    background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+    background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+    background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+    background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 );
+
+}
+.slideshow:hover .flex-prev {
+    opacity: 0.7;
+    left: 10px;
+}
+.slideshow:hover .flex-next {
+    opacity: 0.7;
+    right: 10px;
+}
+.slideshow:hover .flex-next:hover,
+.flexslider:hover .flex-prev:hover {
+    opacity: 1;
+}
+.flex-direction-nav .flex-disabled {
+    opacity: 0!important;
+    filter: alpha(opacity=0);
+    cursor: default;
+}
+
+.flex-direction-nav a:before {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0;
+    font-size: 40px;
+    color: #fff;
+    @include font-icons;
+}
+.flex-direction-nav a.flex-prev:before {
+    content: '\e80a';
+    left: 0;
+}
+.flex-direction-nav a.flex-next:before {
+    content: '\e80b';
+    right: 0;
+}
+
+
+
 
 .text-banner {
     margin: 0 0 $gutter-large;

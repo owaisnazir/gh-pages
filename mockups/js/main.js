@@ -18,5 +18,13 @@
         return false;
     });
 
+    // Home Slideshow
+    $('.slideshow').flexslider({
+        animation: 'slide',
+        prevText: '',
+        nextText: '',
+        pauseOnHover: true
+    });
+
 
 })( this, jQuery );
