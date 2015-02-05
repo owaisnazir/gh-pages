@@ -1,4 +1,8 @@
 <?php
+/*
+Template Name: Contact Us
+*/
+
 get_header();
 the_post();
 
@@ -23,10 +27,42 @@ $hide_sidebar = get_field('hide_sidebar');
 
                 <h1><?php the_title() ?></h1>
 
+                <p>Please contact our attorneys directly or contact the receptionist at any of our three offices.</p>
+
+                <h2>Offices</h2>
+
+                <?php
+
+                $locs = new WP_Query(array(
+                    'post_type' => 'office'
+                ));
+
+                while($locs->have_posts()){
+                    $locs->the_post();
+
+                    $addy = get_field('google_map_address');
+                    if(strlen($addy) == 0)
+                        $addy = get_field('address');
+
+                    $addy = str_replace('<br />', ', ', $addy);
+
+                    echo '<h5>' . get_the_title() . '</h5>';
+                    echo '<p>' . get_field('address') . '<br/>';
+                    echo get_field('phone') . '<br/>';
+                    echo '<a href="mailto:' . get_field('email') . '">' . get_field('email') . '</a></p>';
+                    echo '<iframe src="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=' . urlencode($addy) . '&amp;ie=UTF8&amp;z=14&amp;output=embed" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="300" height="300"></iframe>';
+                }
+
+                wp_reset_query();
+                ?>
+
+
+                <h2>How can we help you?</h2>
+                
                 <?php the_content() ?>
 
-                <div class="nav-previous alignleft"><?php previous_post_link(); ?></div>
-                <div class="nav-next alignright"><?php next_post_link(); ?></div>
+                <?php gravity_form( 1, false, false, false, null, true, 1); ?>
+
 
             </div><!-- .primary-content -->
 

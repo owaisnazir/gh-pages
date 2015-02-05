@@ -30,7 +30,7 @@
 
                 <h4><a href="<?php bloginfo('url') ?>/practice-area/">Practice Areas</a></h4>
 
-                <ul>
+                <ul class="menu">
                     <?php
 
                     $pa = new WP_Query(array(
@@ -89,7 +89,6 @@
 </div><!-- #top -->
 
     <?php wp_footer(); ?>
-    <script src="<?php bloginfo('template_directory') ?>/assets/js/vendor/jquery-1.11.1.min.js"></script>
     <script src="<?php bloginfo('template_directory') ?>/assets/js/plugins.js"></script>
     <script src="<?php bloginfo('template_directory') ?>/assets/js/main.js"></script>
 

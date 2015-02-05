@@ -20,6 +20,8 @@
 
 	<!--[if (gte IE 6)&(lte IE 8)]> <script type="text/javascript" src="<?php bloginfo('template_directory') ?>/assets/js/vendor/selectivizr-1.0.2.min.js"></script> <![endif]-->
     <script src="<?php bloginfo('template_directory') ?>/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    
+    <script src="<?php bloginfo('template_directory') ?>/assets/js/vendor/jquery-1.11.1.min.js"></script>
 
 	<script>
 		// Place Google Analytics code here

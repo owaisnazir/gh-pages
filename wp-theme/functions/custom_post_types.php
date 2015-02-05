@@ -72,7 +72,7 @@ function register_CPTs()
 		'rewrite' => Array('slug'=>'attorney'),
 		'capability_type' => 'post',
 		'has_archive' => true,
-		'hierarchical' => false,
+		'hierarchical' => true,
 		'menu_position' => 21,
 		'supports' => array('title','page-attributes')
 	);

@@ -10,15 +10,32 @@ get_header();
 
         <div class="hero-banner">
 
-            <div class="caption">
+            <div class="slideshow">
 
-                <h1>Dedication &amp; Commitment</h1>
+                <ul class="slides">
+                <?php
+                // loop through the rows of data
+                while ( have_rows('slides') ) : the_row();
+                    ?>
+                    <li>
+                        <div class="caption">
 
-                <p>We are dedicated to providing clients with superior representation and a sincere commitment to achieving the best outcomes.</p>
+                            <h1><?php the_sub_field('title') ?></h1>
 
-                <p class="more-link"><a class="button" href="#">Learn More</a></p>
+                            <?php the_sub_field('blurb') ?>
 
-            </div><!-- .caption -->
+                            <p class="more-link"><a class="button" href="<?php the_sub_field('button_link_url') ?>"><?php the_sub_field('button_label') ?></a></p>
+
+                        </div><!-- .caption -->
+
+                    </li>
+                    <?php
+
+                endwhile;
+                ?>
+                </ul>
+
+            </div><!-- .slideshow -->
 
         </div><!-- .hero-banner -->
 

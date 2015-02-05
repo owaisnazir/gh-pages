@@ -154,10 +154,17 @@
 
                     ?>
 
+                    <h4 class="accordion-toggle">Newsletter Signup</h4>
+                    <div class="accordion-content">
+                        <?php gravity_form( 'Newsletter Signup', false, false, false, null, true, 1); ?>
+                    </div>
+
+
                 </div><!-- .accordian-tabs -->
 
+                <?php the_field('sidebar_wysiwyg'); ?>
+
                 <ul class="menu">
-                    <li><a href="#">Newsletter Signup</a></li>
                     <?php
                     if(strlen(get_field('downloadable_bio')) > 0)
                         echo '<li><a href="' . get_field('downloadable_bio') . '">Download Attorney Bio</a></li>';
