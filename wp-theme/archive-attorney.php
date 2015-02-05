@@ -1,4 +1,10 @@
-<?php get_header() ?>
+<?php
+get_header();
+
+// get all attorneys, not the wordpress limit per page default
+global $query_string;
+query_posts( $query_string . '&posts_per_page=-1&orderby=menu_order&order=asc' );
+?>
     <div id="content">
 
         <div class="wrapper">
