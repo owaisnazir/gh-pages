@@ -1,6 +1,8 @@
 <?php
 get_header();
 the_post();
+
+$hide_sidebar = get_field('hide_sidebar');
 ?>
  <div id="content">
 
@@ -17,7 +19,7 @@ the_post();
 
             </div><!-- .banner-photo -->
 
-            <div class="primary-content">
+            <div class="<?php echo ($hide_sidebar ? '' : 'primary-content'); ?>">
 
                 <h1><?php the_title() ?></h1>
 
@@ -25,36 +27,42 @@ the_post();
 
             </div><!-- .primary-content -->
 
-            <div class="secondary-content">
-
-                <?php
-                if ( have_rows('sidebar_sections') ) {
-                    ?>
-                    <div class="accordion-tabs">
-
-                        <?php
-
-                        // loop through the rows of data
-                        while ( have_rows('sidebar_sections') ) : the_row();
-
-                            echo '<h4 class="accordion-toggle">' . get_sub_field('section_title') . '</h4>';
-                            echo '<div class="accordion-content">';
-                                the_sub_field('content');
-                            echo '</div>';
-
-                        endwhile;
-
-                        ?>
-                    </div>
-                    <?php
-                }
+            <?php
+            if(!$hide_sidebar){
                 ?>
+                <div class="secondary-content">
 
-                <ul class="sidebar menu">
-                    <?php dynamic_sidebar( 'general-sidebar' ); ?>
-                </ul>
+                    <?php
+                    if ( have_rows('sidebar_sections') ) {
+                        ?>
+                        <div class="accordion-tabs">
 
-            </div><!-- .secondary-content -->
+                            <?php
+
+                            // loop through the rows of data
+                            while ( have_rows('sidebar_sections') ) : the_row();
+
+                                echo '<h4 class="accordion-toggle">' . get_sub_field('section_title') . '</h4>';
+                                echo '<div class="accordion-content">';
+                                    the_sub_field('content');
+                                echo '</div>';
+
+                            endwhile;
+
+                            ?>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
+                    <ul class="sidebar menu">
+                        <?php dynamic_sidebar( 'general-sidebar' ); ?>
+                    </ul>
+
+                </div><!-- .secondary-content -->
+                <?php
+            }
+            ?>
 
         </div><!-- .wrapper -->
 
