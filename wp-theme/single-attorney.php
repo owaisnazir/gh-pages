@@ -162,6 +162,8 @@
 
                 </div><!-- .accordian-tabs -->
 
+                <?php the_field('sidebar_wysiwyg'); ?>
+
                 <ul class="menu">
                     <?php
                     if(strlen(get_field('downloadable_bio')) > 0)
