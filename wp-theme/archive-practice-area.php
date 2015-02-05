@@ -28,7 +28,7 @@ query_posts( $query_string . '&posts_per_page=-1&orderby=menu_order&order=asc' )
                     the_post();
                     ?><li>
                         <a href="<?php the_permalink() ?>">
-                            <img src="<?php the_field('photos') ?>" alt="<?php the_title() ?>" />
+                            <img src="<?php the_field('icon') ?>" alt="<?php the_title() ?>" />
                             <h4><?php the_title() ?></h4>
                             <p><em><?php the_field('title') ?></em></p>
                         </a>
