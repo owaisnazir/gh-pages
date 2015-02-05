@@ -305,8 +305,14 @@
         padding: $gutter-large;
         color: $color-dark-grey;
         h1 {
-            margin-top: 0;
+            margin: -5px 0 15px;
             color: $color-dark-grey;
+        }
+        h5 {
+            margin: 0;
+        }
+        p {
+            font-size: 15px;
         }
     }
     .photo {
@@ -324,16 +330,14 @@
         margin-left: 0;
         .details {
             float: left;
-            width: 330px;
-            max-width: 33%;
+            width: 40%;
             padding-bottom: 0;
         }
         .photo {
             float: right;
-            width: 623px;
-            max-width: 67%;
+            width: 60%;
             margin-top: 0;
-            padding: 0;
+            padding-right: 0;
         }
     }
 }

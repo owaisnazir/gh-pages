@@ -23,7 +23,7 @@
     .accordion-toggle {
         position: relative;
         margin: 0 0 $gutter;
-        padding: 4px 24px 4px 4px;
+        padding: 4px 24px 4px 6px;
         background: $color-light-blue;
         cursor: pointer;
         &:after {
@@ -44,7 +44,7 @@
     }
     .accordion-content {
         display: none;
-        padding: 0 0 $gutter;
+        padding: 0 6px $gutter-large;
         p {
             margin-bottom: $gutter;
         }
