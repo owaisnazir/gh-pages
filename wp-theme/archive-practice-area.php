@@ -22,19 +22,13 @@ query_posts( $query_string . '&posts_per_page=-1&orderby=menu_order&order=asc' )
 
             <h1>Practice Areas</h1>
 
-            <ul class="bio-thumb-list menu"><?php
+            <ul class="menu practice-areas"><?php
 
-                while(have_posts()){
-                    the_post();
-                    ?><li>
-                        <a href="<?php the_permalink() ?>">
-                            <img src="<?php the_field('icon') ?>" alt="<?php the_title() ?>" />
-                            <h4><?php the_title() ?></h4>
-                            <p><em><?php the_field('title') ?></em></p>
-                        </a>
-                    </li><?php
-                }
-                
+                wp_list_pages( array(
+                    'post_type' => 'practice-area',
+                    'title_li' => ''
+                ) );
+
             ?></ul>
             <!-- Spaces removed for inline-block -->
 
