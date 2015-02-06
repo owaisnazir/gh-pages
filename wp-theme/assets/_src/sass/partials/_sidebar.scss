@@ -54,4 +54,56 @@
     }
 }
 
+li.widget {
+    .widgettitle {
+        position: relative;
+        font-size: 22px;
+        font-weight: 400;
+        text-transform: none;
+        margin: 0 0 $gutter;
+        padding: 4px 24px 4px 6px;
+        background: $color-light-blue;
+        cursor: pointer;
+    }
+    > ul {
+        padding: 0 6px $gutter-large;
+    }
+}
+
+// Sidebar Signup Form
+.secondary-content .gform_wrapper {
+    width: 100%;
+    max-width: 100% !important;
+    margin: 10px 0;
+    form {
+        overflow: hidden;
+    }
+    .gform_body {
+        float: left;
+        width: 65%;
+        .top_label input.medium {
+            width: 100% !important;
+        }
+        .gfield_label {
+            margin: 10px 0 4px;
+            font-weight: 600;
+        }
+        .gfield_required {
+            margin-left: 4px;
+            color: #790000;
+        }
+    }
+    .gform_footer {
+        clear: none !important;
+        float: right;
+        width: 35%;
+        margin: 18px 0 0 0 !important;
+        padding: 16px 0 10px;
+        font-size: 14px;
+        text-align: right;
+        .button {
+            padding: 4px 15px;
+        }
+    }
+}
 
