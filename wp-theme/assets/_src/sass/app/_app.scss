@@ -108,23 +108,22 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-}
-.slides {
-    > li {
-        display:none;
-        -webkit-backface-visibility:hidden;
-        img {
-            max-width: 100%;
-            height: auto;
+    .slides {
+        > li {
+            display:none;
+            -webkit-backface-visibility:hidden;
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        .no-js & > li:first-child {
+            display: block;
         }
     }
-    .no-js & > li:first-child {
-        display: block;
-    }
+    .flex-control-nav{display:none;}
+    .flex-direction-nav{display:none;}
 }
-
-.flex-control-nav{display:none;}
-.flex-direction-nav{display:none;}
 
 @media (min-width: $mq-min-medium) {
     // Prev/Next Buttons
@@ -305,8 +304,14 @@
         padding: $gutter-large;
         color: $color-dark-grey;
         h1 {
-            margin-top: 0;
+            margin: -5px 0 15px;
             color: $color-dark-grey;
+        }
+        h5 {
+            margin: 0;
+        }
+        p {
+            font-size: 15px;
         }
     }
     .photo {
@@ -324,27 +329,25 @@
         margin-left: 0;
         .details {
             float: left;
-            width: 330px;
-            max-width: 33%;
+            width: 40%;
             padding-bottom: 0;
         }
         .photo {
             float: right;
-            width: 623px;
-            max-width: 67%;
+            width: 60%;
             margin-top: 0;
-            padding: 0;
+            padding-right: 0;
         }
     }
 }
 
 .bio-thumb-list {
-    margin: $gutter-large (-$gutter-large);
+    margin: $gutter-large (-$gutter);
     text-align: center;
     li {
         display: inline-block;
         vertical-align: top;
-        max-width: 100%;
+        width: 100%;
         padding: $gutter;
         a {
             display: block;
@@ -370,17 +373,17 @@
     }
     @media (min-width: $mq-min-small) {
         li {
-            max-width: 50%;
+            width: 50%;
         }
     }
     @media (min-width: $mq-min-small) {
         li {
-            max-width: 33.333333%;
+            width: 33.333333%;
         }
     }
     @media (min-width: $mq-min-large) {
         li {
-            max-width: 25%;
+            width: 25%;
         }
     }
 }
@@ -409,6 +412,33 @@
 //----------------------------------
 // FORMS AND BUTTONS
 //----------------------------------
+// Signup Form
+.gform_wrapper {
+    width: 100%;
+    max-width: 100% !important;
+    form {
+        overflow: hidden;
+    }
+    .gform_body {
+        float: left;
+        width: 65%;
+        .top_label input.medium {
+            width: 100% !important;
+        }
+    }
+    .gform_footer {
+        clear: none !important;
+        float: right;
+        width: 35%;
+        margin-top: 17px !important;
+        font-size: 14px;
+        text-align: right;
+        .button {
+            padding: 4px 15px;
+        }
+    }
+}
+
 // Buttons
 .button,
 .button:visited {
@@ -448,6 +478,7 @@
 }
 
 .primary-button,
+.primary-button:hover,
 .primary-button:visited {
     color: #fff;
     @include font-smoothing;

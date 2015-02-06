@@ -89,13 +89,7 @@ h1 {
     }
 }
 h2 {
-    margin: $paragraph-bottom-margin 0 ($paragraph-bottom-margin / 2);
     font-size: 24px;
-    font-weight: 400;
-    color: $color-dark-blue;
-}
-h3 {
-    font-size: 22px;
     text-transform: uppercase;
     color: $color-dark-blue;
     em {
@@ -105,9 +99,21 @@ h3 {
         text-transform: none;
     }
 }
+h3 {
+    margin: $paragraph-bottom-margin 0 ($paragraph-bottom-margin / 2);
+    font-size: 22px;
+    font-weight: 400;
+    color: $color-dark-blue;
+    em {
+        display: block;
+        margin: $headline-bottom-margin 0;
+        font-weight: 400;
+        text-transform: none;
+    }
+}
 h4{font-size:20px;}
-h5{font-size:18px;text-transform:uppercase;}
-h6{font-size:18px;}
+h5{font-size:16px;text-transform:uppercase;}
+h6{font-size:16px;}
 
 // Specific Typography
 p,ul,ol,dl,table,pre,code,samp,address {
