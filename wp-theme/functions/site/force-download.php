@@ -1,6 +1,7 @@
 <?php
 $sourceFile = $_GET['file'];
 
+$sourceFile = __DIR__ . '/../../../../uploads/' . $sourceFile;
 
 if( headers_sent() )
   die('Headers Sent');
@@ -36,6 +37,7 @@ switch( $file_extension ) {
   case "mov"  : $ctype="video/quicktime"; break;
   case "avi"  : $ctype="video/x-msvideo"; break;
   case "mp4"  : $ctype="video/mpeg"; break;
+  case "vcf"  : $ctype="text/vcard"; break;
 
   //The following are for extensions that shouldn't be downloaded
   case "php"  :
