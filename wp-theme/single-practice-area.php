@@ -17,7 +17,12 @@
             </div><!-- .banner-photo -->
 
             <h1>
-                <img src="<?php the_field('icon') ?>" alt="<?php the_title() ?>" />
+                <?php
+                $icon_src = get_field('icon');
+                if(!empty($icon_src))
+                    echo '<img src="' . $icon_src . '" alt="' . get_the_title() . '" />';
+                ?>
+                
                 <?php the_title(); ?>
             </h1>
 
