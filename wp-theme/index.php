@@ -114,6 +114,8 @@ $hide_sidebar = get_field('hide_sidebar');
                             <?php
                             wp_reset_query();
                         }
+
+                        include('partial-blog-section-sidebar-stuff.php');
                     }
 
                     ?>

@@ -65,6 +65,8 @@ get_header();
 
             <div class="secondary-content">
 
+                <?php include('partial-blog-section-sidebar-stuff.php'); ?>
+                
                 <ul class="sidebar menu">
                     <?php dynamic_sidebar( 'general-sidebar' ); ?>
                 </ul>
