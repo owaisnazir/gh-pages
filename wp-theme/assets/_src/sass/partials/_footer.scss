@@ -8,6 +8,7 @@
     @include font-smoothing;
     background-color: $color-dark-grey;
     border-top: 38px solid $color-light-blue;
+
 }
 #footer a {
     color: #fff;
@@ -29,6 +30,8 @@
     text-transform: uppercase;
 }
 
+
+
 @media (min-width: $mq-min-large) {
     .footer-col {
         position: relative;
@@ -46,5 +49,9 @@
     #footer h4 {
         padding-bottom: 5px;
         border-bottom: 1px solid $color-light-grey;
+    }
+    #footer .menu .children {
+        padding-left: 1em;
+        margin-bottom: 0;
     }
 }

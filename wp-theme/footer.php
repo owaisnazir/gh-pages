@@ -33,17 +33,11 @@
                 <ul class="menu">
                     <?php
 
-                    $pa = new WP_Query(array(
+                    wp_list_pages( array(
                         'post_type' => 'practice-area',
-                        'posts_per_page' => -1,
-                        'order' => 'ASC',
-                        'orderby' => 'title'
-                    ));
+                        'title_li' => ''
+                    ) );
 
-                    while($pa->have_posts()){
-                        $pa->the_post();
-                        echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
-                    }
                     ?>
                 </ul>
 
@@ -53,7 +47,6 @@
             <div class="footer-col">
 
                 <nav class="footer-nav">
-
 
                     <?php wp_nav_menu( array('theme_location' => 'footer' )); ?>
 
