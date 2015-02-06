@@ -8,6 +8,8 @@
             <?php
             $banner_src = get_field('header_image');
             if(strlen($banner_src) == 0)
+                $banner_src = get_field('practice_areas_header_image', 'options');
+            if(strlen($banner_src) == 0)
                 $banner_src = get_field('default_page_header_image', 'options');
             ?>
                 <img src="<?php echo $banner_src; ?>" alt="" />

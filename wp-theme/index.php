@@ -35,6 +35,35 @@ $hide_sidebar = get_field('hide_sidebar');
                 ?>
                 <div class="secondary-content">
 
+
+                    <?php
+                    ///////////////////////
+                    // RELATED ATTORNEYS
+                    ///////////////////////
+                    
+                    $related = new WP_Query( array(
+                      'connected_type' => 'post_attorney',
+                      'connected_items' => get_queried_object(),
+                      'nopaging' => false,
+                    ) );
+
+                    if($related->have_posts()){
+                        ?>
+                        <h2>Attorney<?php echo $related->found_posts > 1 ? 's' : '' ?></h2>
+                        <ul class="menu">
+                            <?php
+                            while($related->have_posts()){
+                                $related->the_post();
+                                echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+                            }
+                            ?>
+                        </ul>
+
+                        <?php
+                        wp_reset_query();
+                    }
+                    ?>
+
                     <?php
                     if ( have_rows('sidebar_sections') ) {
                         ?>
