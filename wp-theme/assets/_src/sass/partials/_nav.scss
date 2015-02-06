@@ -34,7 +34,7 @@
             text-decoration: none;
             text-transform:uppercase;
         }
-        &.active a,
+        &.current_page_item a,
         a:hover,
         a:active,
         a:focus {
@@ -52,7 +52,61 @@
                 display: inline-block;
                 vertical-align: top;
             }
-            li{display:none;} // Hide children
+        }
+    }
+    .menu {
+        // Drop-down Functionality
+        li {
+            position: relative;
+        }
+        ul {
+            display: none;
+        }
+        li:hover > ul {
+            display: block;
+        }
+        // Nested List - secondary
+        ul {
+            position: absolute;
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            margin: 0;
+            padding: 5px 0;
+            width: 185px;
+            text-align: left;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+            li {
+                a {
+                    display: block;
+                    margin: 0;
+                    padding: 8px 20px;
+                    font-size: 13px;
+                    line-height: 1;
+                    text-decoration: none;
+                    color: #666;
+                    border: 0;
+                    background: none;
+                }
+                & a:hover,
+                &:hover > a {
+                    text-decoration: underline;
+                }
+            }
+            // Nested List - tertiary
+            ul {
+                left: 95%;
+                top: -3px;
+            }
+        }
+        li:last-child > ul {
+            left: auto;
+            right: 0;
+            ul {
+                left: auto;
+                right: 95%;
+            }
         }
     }
 }
@@ -238,13 +292,11 @@
 
 // Desktop Menu
 @media (min-width: $mq-min-large) {
-
-    .global-nav .toggle{display:none;}
-
     .global-nav {
         position: absolute;
         top: 90px;
         right: 0;
+        .toggle{display:none;}
         li {
             display: inline-block;
             vertical-align: top;
@@ -254,18 +306,73 @@
                 padding: 5px 0 10px;
                 font-size: $font-size-large;
                 text-decoration: none;
-                text-transform:uppercase;
+                text-transform: uppercase;
                 color: $color-dark-grey;
             }
-            &.active a,
+            &.current_page_item a,
             a:hover,
+            &:hover a,
             a:active,
             a:focus {
                 color: $color-href;
                 border-bottom: 2px solid $color-href;
             }
         }
+        .menu {
+            // Drop-down Functionality
+            li {
+                position: relative;
+            }
+            ul {
+                display: none;
+            }
+            li:hover > ul {
+                display: block;
+            }
+            // Nested List - secondary
+            ul {
+                position: absolute;
+                z-index: 1000;
+                top: 100%;
+                left: 0;
+                margin: 0;
+                padding: 5px 0;
+                width: 185px;
+                text-align: left;
+                background-color: #fff;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+                li {
+                    a {
+                        display: block;
+                        margin: 0;
+                        padding: 8px 20px;
+                        font-size: 13px;
+                        line-height: 1;
+                        text-decoration: none;
+                        color: #666;
+                        border: 0;
+                        background: none;
+                    }
+                    & a:hover,
+                    &:hover > a {
+                        text-decoration: underline;
+                    }
+                }
+                // Nested List - tertiary
+                ul {
+                    left: 95%;
+                    top: -3px;
+                }
+            }
+            li:last-child > ul {
+                left: auto;
+                right: 0;
+                ul {
+                    left: auto;
+                    right: 95%;
+                }
+            }
+        }
     }
-
 }
 // END: Desktop Menu

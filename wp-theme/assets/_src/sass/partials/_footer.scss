@@ -8,43 +8,46 @@
     @include font-smoothing;
     background-color: $color-dark-grey;
     border-top: 38px solid $color-light-blue;
-}
-#footer a {
-    color: #fff;
-    text-decoration: none;
-}
-
-#footer a:hover,
-#footer a:active {
-    background: rgba(0,0,0,0.2);
-}
-
-#footer h4,
-#footer h5,
-#footer p {
-    font-size: 15px;
-}
-#footer h4 {
-    margin-top: 50px;
-    text-transform: uppercase;
-}
-
-@media (min-width: $mq-min-large) {
-    .footer-col {
-        position: relative;
-        float: left;
-        width: 20%;
-        text-align: left;
-        &:nth-child(2) {
-            width: 60%;
-            padding: 0 (2 * $gutter-large);
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+    a:hover,
+    a:active {
+        background: rgba(0,0,0,0.2);
+    }
+    h4,
+    h5,
+    p {
+        font-size: 15px;
+    }
+    h4 {
+        margin-top: 50px;
+        text-transform: uppercase;
+    }
+    .menu .children {
+        margin-bottom: 0;
+        padding-left: 1em;
+    }
+    @media (min-width: $mq-min-large) {
+        .footer-col {
+            position: relative;
+            float: left;
+            width: 24%;
+            text-align: left;
+            &:nth-child(2) {
+                width: 56%;
+                padding: 0 (2 * $gutter-large);
+            }
+            &:nth-child(3) {
+                width: 20%;
+                padding-top: 90px;
+            }
         }
-        &:nth-child(3) {
-            padding-top: 90px;
+        h4 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid $color-light-grey;
         }
     }
-    #footer h4 {
-        padding-bottom: 5px;
-        border-bottom: 1px solid $color-light-grey;
-    }
 }
+

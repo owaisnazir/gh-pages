@@ -336,7 +336,7 @@
             float: right;
             width: 60%;
             margin-top: 0;
-            padding-right: 0;
+            padding: 0;
         }
     }
 }
@@ -412,33 +412,6 @@
 //----------------------------------
 // FORMS AND BUTTONS
 //----------------------------------
-// Signup Form
-.gform_wrapper {
-    width: 100%;
-    max-width: 100% !important;
-    form {
-        overflow: hidden;
-    }
-    .gform_body {
-        float: left;
-        width: 65%;
-        .top_label input.medium {
-            width: 100% !important;
-        }
-    }
-    .gform_footer {
-        clear: none !important;
-        float: right;
-        width: 35%;
-        margin-top: 17px !important;
-        font-size: 14px;
-        text-align: right;
-        .button {
-            padding: 4px 15px;
-        }
-    }
-}
-
 // Buttons
 .button,
 .button:visited {
