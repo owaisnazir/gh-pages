@@ -65,6 +65,60 @@ $hide_sidebar = get_field('hide_sidebar');
                     ?>
 
                     <?php
+                    /////////////////////////////////
+                    // BLOG CATS AND PRACTICE AREAS
+                    /////////////////////////////////
+                    
+                    if(get_post_type() == 'post'){
+
+                        // categories
+                        $taxonomy = 'category';
+
+                        // get the term IDs assigned to post.
+                        $post_terms = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
+                        // separator between links
+                        $separator = ', ';
+
+                        if ( !empty( $post_terms ) && !is_wp_error( $post_terms ) ) {
+
+                            $term_ids = implode( ',' , $post_terms );
+                            $terms = wp_list_categories( 'echo=0&title_li=&taxonomy=' . $taxonomy . '&include=' . $term_ids );
+                            $terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
+
+                            $cat_title = count($post_terms) == 1 ? 'Category' : 'Categories';
+                            echo '<h2>' . $cat_title . '</h2>';
+                            echo '<ul class="menu">';
+                            echo  $terms;
+                            echo '</ul>';
+                        }
+                        
+                        
+                        $related = new WP_Query( array(
+                          'connected_type' => 'post_practice-area',
+                          'connected_items' => get_queried_object(),
+                          'nopaging' => false,
+                        ) );
+
+                        if($related->have_posts()){
+                            ?>
+                            <h2>Practice Area<?php echo $related->found_posts > 1 ? 's' : '' ?></h2>
+                            <ul class="menu">
+                                <?php
+                                while($related->have_posts()){
+                                    $related->the_post();
+                                    echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+                                }
+                                ?>
+                            </ul>
+
+                            <?php
+                            wp_reset_query();
+                        }
+                    }
+
+                    ?>
+
+                    <?php
                     if ( have_rows('sidebar_sections') ) {
                         ?>
                         <div class="accordion-tabs">
