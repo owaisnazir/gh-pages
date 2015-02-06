@@ -22,7 +22,7 @@
             <?php
             $youtube_url = get_field('youtube_id');
 
-            if(strpos($youtube_url, 'http://') === false && strpos($youtube_url, 'https://') === false )
+            if(strlen($youtube_url) > 0 && strpos($youtube_url, 'http://') === false && strpos($youtube_url, 'https://') === false )
                 $youtube_url = 'http://youtube.com/watch?v=' . $youtube_url;
 
             echo apply_filters('the_content', $youtube_url);
