@@ -23,14 +23,14 @@
             font-size: 22px;
             font-weight: 400;
             text-transform: none;
-            margin: 0 0 $gutter;
+            margin-bottom: $gutter;
             padding: 4px 24px 4px 6px;
             background: $color-light-blue;
             cursor: pointer;
         }
         li.widget > ul,
-        .secondary-content > .menu {
-            padding: 0 6px $gutter-large;
+        > .menu {
+            padding: 0 10px $gutter-large;
         }
     }
 }
