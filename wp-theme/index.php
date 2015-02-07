@@ -25,8 +25,14 @@ $hide_sidebar = get_field('hide_sidebar');
 
                 <?php the_content() ?>
 
-                <div class="nav-previous alignleft"><?php previous_post_link(); ?></div>
-                <div class="nav-next alignright"><?php next_post_link(); ?></div>
+                <?php
+                if(get_post_type() == 'post'){
+                    ?>
+                    <div class="nav-previous alignleft"><?php previous_post_link(); ?></div>
+                    <div class="nav-next alignright"><?php next_post_link(); ?></div>
+                    <?php
+                }
+                ?>
 
             </div><!-- .primary-content -->
 
