@@ -16,6 +16,23 @@
             padding-left: 0;
         }
     }
+    .secondary-content {
+        > h2,
+        .widget .widgettitle {
+            position: relative;
+            font-size: 22px;
+            font-weight: 400;
+            text-transform: none;
+            margin-bottom: $gutter;
+            padding: 4px 24px 4px 6px;
+            background: $color-light-blue;
+            cursor: pointer;
+        }
+        li.widget > ul,
+        > .menu {
+            padding: 0 10px $gutter-large;
+        }
+    }
 }
 
 .accordion-tabs {
@@ -51,22 +68,6 @@
         &.open {
             display: block;
         }
-    }
-}
-
-li.widget {
-    .widgettitle {
-        position: relative;
-        font-size: 22px;
-        font-weight: 400;
-        text-transform: none;
-        margin: 0 0 $gutter;
-        padding: 4px 24px 4px 6px;
-        background: $color-light-blue;
-        cursor: pointer;
-    }
-    > ul {
-        padding: 0 6px $gutter-large;
     }
 }
 
