@@ -49,19 +49,16 @@
             ));
 
             if($child_pas->have_posts()){
+                ?>
+                <h2>Sub Practice Areas</h2>
+                <ul class="menu"><?php
 
-                // echo '<h2>Sub Practice Areas</h2>';
-                echo '<ul class="bio-thumb-list menu">';
+                wp_list_pages( array(
+                    'post_type' => 'practice-area',
+                    'child_of' => $post->ID,
+                    'title_li' => ''
+                ) );
 
-                while($child_pas->have_posts()){
-                    $child_pas->the_post();
-                    ?><li>
-                        <a href="<?php the_permalink() ?>">
-                            <img src="<?php the_field('icon') ?>" alt="<?php the_title() ?>" />
-                            <h4><?php the_title() ?></h4>
-                        </a>
-                    </li><?php
-                }
 
                 echo '</ul>';
 
