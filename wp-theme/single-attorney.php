@@ -18,8 +18,11 @@
 
                             <?php
                             $vcard = get_field('vcard');
-                            if(!empty($vcard))
+                            if(!empty($vcard)){
+                                // strip out hostname and such
+                                $vcard = str_replace(get_bloginfo('url') . '/wp-content/uploads/', '', $vcard);
                                 echo '<li class="cn-vcard"><a href="' . get_bloginfo('template_directory') . '/functions/site/force-download.php?file=' . $vcard . '">Download vCard</a></li>';
+                            }
                             
                             if(strlen(get_field('facebook_url')) > 0)
                                 echo '<li class="cn-facebook"><a href="' . get_field('facebook_url') . '">Facebook</a></li>';
