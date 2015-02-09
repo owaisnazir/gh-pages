@@ -15,8 +15,9 @@ query_posts( $query_string . '&posts_per_page=-1&orderby=menu_order&order=asc' )
             $banner_src = get_field('practice_areas_header_image', 'options');
             if(strlen($banner_src) == 0)
                 $banner_src = get_field('default_page_header_image', 'options');
+            if(!empty($banner_src))
+                echo '<img src="' . $banner_src . '" alt="" />';
             ?>
-                <img src="<?php echo $banner_src; ?>" alt="" />
 
             </div><!-- .banner-photo -->
 

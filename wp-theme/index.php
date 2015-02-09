@@ -14,9 +14,9 @@ $hide_sidebar = get_field('hide_sidebar');
             $banner_src = get_field('header_image');
             if(strlen($banner_src) == 0)
                 $banner_src = get_field('default_page_header_image', 'options');
+            if(!empty($banner_src))
+                echo '<img src="' . $banner_src . '" alt="" />';
             ?>
-                <img src="<?php echo $banner_src; ?>" alt="" />
-
             </div><!-- .banner-photo -->
 
             <div class="<?php echo ($hide_sidebar ? '' : 'primary-content'); ?>">
