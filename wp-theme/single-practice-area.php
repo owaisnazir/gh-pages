@@ -50,7 +50,7 @@
 
             if($child_pas->have_posts()){
                 ?>
-                <h2>Sub Practice Areas</h2>
+                <h2>Related Practice Areas</h2>
                 <ul class="menu"><?php
 
                 wp_list_pages( array(
