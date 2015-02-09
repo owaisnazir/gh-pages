@@ -5,10 +5,13 @@ Template Name: Homepage
 
 get_header();
 
+$banner_src = get_field('slider_background');
+
+$banner_bg_attr = !empty($banner_src) ? 'style="background-image: url(' . $banner_src . ')"' : '';
 ?>
    <div id="content">
 
-        <div class="hero-banner">
+        <div class="hero-banner" <?php echo $banner_bg_attr ?>>
 
             <div class="slideshow">
 
