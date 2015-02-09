@@ -105,14 +105,50 @@ $hide_sidebar = get_field('hide_sidebar');
                           'nopaging' => false,
                         ) );
 
+
                         if($related->have_posts()){
                             ?>
                             <h2>Practice Area<?php echo $related->found_posts > 1 ? 's' : '' ?></h2>
                             <ul class="menu">
                                 <?php
+                                // sort parents and children
+                                $related_pas = array();
+                                $parent_pas = array();
                                 while($related->have_posts()){
                                     $related->the_post();
-                                    echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+                                    $related_pas[get_the_ID()] = $post;
+                                    $related_pas[get_the_ID()]->echoed = false;
+
+                                    if($post->post_parent > 0){
+                                        if(!isset($parent_pas[$post->post_parent]))
+                                            $parent_pas[$post->post_parent] = array();
+                                        $parent_pas[$post->post_parent][] = get_the_ID();
+                                    }
+                                }
+
+
+                                // spit em out
+                                foreach($related_pas as $pa_id => $pa){
+                                    if($pa->echoed || ($pa->post_parent > 0 && isset($related_pas[$pa->post_parent])))
+                                        continue;
+
+
+                                    echo '<li><a href="' . get_bloginfo('url') . '/posts-by-practice-area/?practice-area-filter=' . $pa->post_name . '">' . $pa->post_title . '</a>';
+
+                                    if(isset($parent_pas[$pa->ID]) && count($parent_pas[$pa->ID]) > 0){
+                                        echo '<ul class="menu children">';
+
+                                        foreach($parent_pas[$pa->ID] as $child_pa_id){
+                                            $child_pa = $related_pas[$child_pa_id];
+                                            echo '<li><a href="' . get_bloginfo('url') . '/posts-by-practice-area/?practice-area-filter=' . $child_pa->post_name . '">' . $child_pa->post_title . '</a></li>';
+                                            $related_pas[$child_pa_id]->echoed = true;
+                                        }
+
+                                        echo '</ul>';
+                                    }
+
+                                    echo '</li>';
+                                    $related_pas[$pa_id]->echoed = true;
                                 }
                                 ?>
                             </ul>
