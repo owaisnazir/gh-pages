@@ -70,8 +70,6 @@
                 $related = new WP_Query( array(
                   'connected_type' => 'post_attorney',
                   'connected_items' => get_queried_object(),
-                  'orderby' => 'menu_order',
-                  'order' => 'ASC',
                   'nopaging' => true,
                 ) );
 
@@ -131,13 +129,30 @@
                         ) );
 
                         if($related->have_posts()){
+                            
+                            // get order by id
+                            $ordered = array();
+                            while($related->have_posts()){
+                                $related->the_post();
+
+                                $ord_meta = p2p_get_meta( get_post()->p2p_id, 'order', true );
+
+                                if(!isset($ordered[$ord_meta]))
+                                    $ordered[$ord_meta] = array();
+
+                                $ordered[$ord_meta][] =  $post;
+                            }
+                            asort($ordered);
+
+
                             ?>
 
                             <ul class="menu">
                                 <?php
-                                while($related->have_posts()){
-                                    $related->the_post();
-                                    echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+                                foreach($ordered as $posts){
+                                    foreach($posts as $post){
+                                        echo '<li><a href="' . get_permalink($post_id) . '">' . $post->post_title . '</a></li>';
+                                    }
                                 }
                                 ?>
                             </ul>
