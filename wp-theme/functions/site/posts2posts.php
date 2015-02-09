@@ -13,7 +13,8 @@ function p2p_macelree(){
 	p2p_register_connection_type( array(
 	    'name' => 'post_practice-area',
 	    'from' => 'post',
-	    'to' => 'practice-area'
+	    'to' => 'practice-area',
+	    'reciprocal' => true
 	) );
 
 	// Posts and Offices

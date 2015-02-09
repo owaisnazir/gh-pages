@@ -9,7 +9,9 @@
     
     <link rel="icon" type="image/ico" href="<?php bloginfo('template_directory') ?>/assets/images/favicon.ico" />
 	
-	<title><?php wp_title('&raquo;','true','right'); ?></title>
+	<title><?php
+        echo empty($GLOBALS['title_override']) ? wp_title('&raquo;',false,'right') : $GLOBALS['title_override'];
+    ?></title>
 	
 	<!--[if IE 8]>
 		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/ie.css" />
