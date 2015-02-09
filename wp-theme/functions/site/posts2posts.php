@@ -26,14 +26,6 @@ function p2p_macelree(){
 	) );
 
 
-	// Attorney and Case Results
-	p2p_register_connection_type( array(
-	    'name' => 'attorney_case-result',
-	    'from' => 'attorney',
-	    'to' => 'case-result',
-	    'reciprocal' => true
-	) );
-
 
 	// Attorney and Office
 	p2p_register_connection_type( array(
@@ -49,17 +41,15 @@ function p2p_macelree(){
 	    'name' => 'attorney_practice-area',
 	    'from' => 'attorney',
 	    'to' => 'practice-area',
-	    'reciprocal' => true
+	    'reciprocal' => true,
+	    'fields' => array(
+        'order' => array(
+            'title' => 'Order',
+            'type' => 'text',
+        ),
+      )
 	) );
 
-
-	// Case Result and Practice Area
-	p2p_register_connection_type( array(
-	    'name' => 'case-result_practice-area',
-	    'from' => 'case-result',
-	    'to' => 'practice-area',
-	    'reciprocal' => true
-	) );
 
 }
 

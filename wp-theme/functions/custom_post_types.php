@@ -148,38 +148,6 @@ function register_CPTs()
 	register_post_type('office',$args);
 
 
-	$labels = array(
-		'name' => _x('Case Result', 'post type general name'),
-		'singular_name' => _x('Case Result', 'post type singular name'),
-		'add_new' => _x('Add New', 'Case Result'),
-		'add_new_item' => __('Add New Case Result'),
-		'edit_item' => __('Edit Case Result'),
-		'new_item' => __('New Case Result'),
-		'view_item' => __('View Case Result'),
-		'search_items' => __('Search Case Results'),
-		'not_found' =>  __('No Case Result Items found'),
-		'not_found_in_trash' => __('No Case Result Items found in Trash'),
-		'parent_item_colon' => '',
-		'menu_name' => 'Case Results'
-
-	);
-	$args = array(
-		'labels' => $labels,
-		'public' => true,
-		'publicly_queryable' => true,
-		'show_ui' => true,
-		'show_in_menu' => true,
-		'show_in_nav_menus' => true,
-		'query_var' => true,
-		'rewrite' => Array('slug'=>'case-result'),
-		'capability_type' => 'post',
-		'has_archive' => true,
-		'hierarchical' => false,
-		'menu_position' => 21,
-		'supports' => array('title','page-attributes')
-	);
-
-	register_post_type('case-result',$args);
 
 }
 

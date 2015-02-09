@@ -70,6 +70,8 @@
                 $related = new WP_Query( array(
                   'connected_type' => 'post_attorney',
                   'connected_items' => get_queried_object(),
+                  'orderby' => 'menu_order',
+                  'order' => 'ASC',
                   'nopaging' => true,
                 ) );
 
