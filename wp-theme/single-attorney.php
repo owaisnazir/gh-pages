@@ -136,13 +136,13 @@
                                 $related->the_post();
 
                                 $ord_meta = p2p_get_meta( get_post()->p2p_id, 'order', true );
-
+                                
                                 if(!isset($ordered[$ord_meta]))
-                                    $ordered[$ord_meta] = array();
+                                    $ordered[intval($ord_meta)] = array();
 
                                 $ordered[$ord_meta][] =  $post;
                             }
-                            asort($ordered);
+                            ksort($ordered);
 
 
                             ?>
