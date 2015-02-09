@@ -6,8 +6,12 @@
     text-align: center;
     color: #fff;
     @include font-smoothing;
+    background-repeat: no-repeat;
+    background-image: url(images/footer-bg.png);
     background-color: $color-dark-grey;
     border-top: 38px solid $color-light-blue;
+    background-position: 95%;
+    background-size: contain;
 
     a {
         color: #fff;
