@@ -39,53 +39,46 @@
 	<?php wp_head();?>
 
 </head>
-<body <?php body_class(); ?>  id="<?php echo get_template_name(); ?>">
+<body <?php body_class(); ?> id="<?php echo get_template_name(); ?>">
 <!--[if lt IE 8]> <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
-
-
 <div id="top">
 
     <header id="header">
-
-        <div class="top-navbar">
-
-            <div class="wrapper">
-
-                <nav class="utility-nav">
-
-                    <?php wp_nav_menu( array('theme_location' => 'utility' )); ?>
-
-                </nav>
-
-                <nav class="social-nav">
-
-                    <ul class="menu">
-                        <li class="sn-facebook"><a href="<?php the_field('facebook_url', 'option') ?>">Facebook</a></li>
-                        <li class="sn-twitter"><a href="<?php the_field('twitter_url', 'option') ?>">Twitter</a></li>
-                        <li class="sn-linkedin"><a href="<?php the_field('linkedin_url', 'option') ?>">Linked In</a></li>
-                        <li class="sn-youtube"><a href="<?php the_field('youtube_url', 'option') ?>">You Tube</a></li>
-                    </ul>
-
-                </nav>
-
-            </div><!-- .wrapper -->
-
-        </div><!-- .top-navbar -->
 
         <div class="wrapper">
 
             <h1 class="branding"><a href="<?php bloginfo('url') ?>"><img src="<?php bloginfo('template_directory') ?>/images/macelree_logo.png" alt="MacElree Harvey" /></a></h1>
 
-            <nav class="global-nav">
+            <div class="mobile-menu">
 
-                <div class="container">
+                <a class="toggle" href="#"><span class="visually-hidden">Menu</span><span aria-hidden="true" class="icon-menu icon"></span></a>
 
-                    <a class="toggle" href="#"><span class="visually-hidden">Menu</span><span aria-hidden="true" class="icon-menu icon"></span></a>
+                <div class="drawer">
 
+                    <nav class="global-nav">
 
-                    <?php wp_nav_menu( array('theme_location' => 'primary' )); ?>
+                        <?php wp_nav_menu( array('theme_location' => 'primary' )); ?>
 
-                </div><!-- .container -->
+                    </nav>
+
+                    <nav class="utility-nav">
+
+                        <?php wp_nav_menu( array('theme_location' => 'utility' )); ?>
+
+                    </nav>
+
+                </div><!-- .drawer -->
+
+            </div><!-- .mobile-menu -->
+
+            <nav class="social-nav">
+
+                <ul class="menu">
+                    <li class="sn-facebook"><a href="<?php the_field('facebook_url', 'option') ?>">Facebook</a></li>
+                    <li class="sn-twitter"><a href="<?php the_field('twitter_url', 'option') ?>">Twitter</a></li>
+                    <li class="sn-linkedin"><a href="<?php the_field('linkedin_url', 'option') ?>">Linked In</a></li>
+                    <li class="sn-youtube"><a href="<?php the_field('youtube_url', 'option') ?>">You Tube</a></li>
+                </ul>
 
             </nav>
 

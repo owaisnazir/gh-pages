@@ -4,39 +4,6 @@
 
 // Each page/section should have their own styling. Name your stylesheets so that they correspond with pages or template files.
 
-.flex-video-container {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.flex-video {
-    position: relative;
-    height: 0;
-//    padding-top: 35px;
-    padding-top: 25px;
-    padding-bottom: 56.25%;
-    margin-bottom: $paragraph-bottom-margin;
-    overflow: hidden;
-}
-.flex-video.widescreen {
-    padding-bottom: 56.25%;
-}
-.flex-video.four-by-three {
-    padding-bottom: 75%;
-}
-.flex-video.vimeo {
-    padding-top: 0; 
-}
-.flex-video iframe,
-.flex-video object,
-.flex-video embed,
-.flex-video video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
 //----------------------------------
 // MODULAR ELEMENTS
 //----------------------------------
@@ -295,6 +262,46 @@
     }
 }
 
+// Practice Areas
+.practice-areas-list {
+
+    margin: $gutter-large -10px;
+
+    > li {
+        margin: 0 0 5px;
+
+        a {
+            display: inline-block;
+            vertical-align: top;
+            width: 100%;
+            padding: 5px 10px;
+            text-decoration: none;
+        }
+
+        > a {
+            text-transform: uppercase;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .children {
+            .children {
+                padding-left: 20px;
+            }
+        }
+
+    }
+
+    @media (min-width: $mq-min-large) {
+        > li {
+            float: left;
+            width: 33.333333%;
+            padding: 0 10px;
+        }
+
+    }
+
+}
+
 // Lawyer Pages
 .bio-card {
     overflow: hidden;
@@ -391,6 +398,8 @@
 // Secondary Pages
 .banner-photo {
     margin: 0 -20px $gutter-large;
+    padding: 2px 0;
+    background-color: $color-light-blue;
     @media (min-width: $mq-min-large) {
         margin: 0 auto $gutter-large auto;
     }
@@ -398,14 +407,75 @@
 
 // Blog Entry
 .post {
-    h1 {
-        color: $color-pine-green;
+    margin-bottom: $gutter;
+    padding-bottom: $gutter-large;
+    border-bottom: 2px dotted $color-light-grey;
+    h2 {
+        a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
     .meta {
         margin-top: (-$headline-bottom-margin);
         font-size: 14px;
         font-weight: 600;
         color: $color-light-tan;
+    }
+}
+
+.pagination {
+    text-align: right;
+    .page-numbers {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 1px 5px;
+        padding: 4px 8px;
+        border-radius: 3px;
+        text-align: center;
+        text-decoration: none;
+        &:hover{
+            background-color: $color-light-grey;
+        }
+        &.current {
+            background-color: $color-light-blue;
+        }
+        &.dots,
+        &.dots:hover {
+            margin-right: 0;
+            margin-left: 0;
+            padding-right: 0;
+            padding-left: 0;
+            background: none;
+        }
+    }
+}
+
+// Contact Page
+.contact-cards {
+    margin: $gutter-large 0;
+    padding: 0 $gutter-large;
+    @media (min-width: $mq-min-large) {
+        padding: 0;
+    }
+    .contact-card {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        margin: 0 0 20px;
+        padding: 0;
+        background-color: $color-light-blue;
+        border-radius: 6px;
+        h5,
+        p {
+            padding: 0 15px;
+        }
+        iframe {
+            width: 100%;
+            height: 200px;
+        }
     }
 }
 

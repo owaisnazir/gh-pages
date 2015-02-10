@@ -26,11 +26,16 @@
             margin-bottom: $gutter;
             padding: 4px 24px 4px 6px;
             background: $color-light-blue;
+        }
+        .widget .widgettitle {
             cursor: pointer;
         }
         li.widget > ul,
         > .menu {
             padding: 0 10px $gutter-large;
+            .menu {
+                padding-left: $gutter-large;
+            }
         }
     }
 }

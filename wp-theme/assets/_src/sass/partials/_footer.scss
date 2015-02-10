@@ -2,6 +2,7 @@
 // FOOTER
 //----------------------------------
 #footer {
+    overflow: hidden;
     padding: 0 0 (2 * $gutter-large);
     text-align: center;
     color: #fff;
@@ -10,27 +11,30 @@
     border-top: 38px solid $color-light-blue;
 
     a {
+        display: inline-block;
+        vertical-align: top;
+        padding: 5px 20px;
         color: #fff;
         text-decoration: none;
+        &:hover,
+        &:active {
+            background: rgba(0,0,0,0.2);
+        }
     }
-    a:hover,
-    a:active {
-        background: rgba(0,0,0,0.2);
-    }
+
     h4,
     h5,
     p {
         font-size: 15px;
     }
+
     h4 {
         margin-top: 50px;
         text-transform: uppercase;
     }
-    .menu .children {
-        margin-bottom: 0;
-        padding-left: 1em;
-    }
+
     @media (min-width: $mq-min-large) {
+
         .footer-col {
             position: relative;
             float: left;
@@ -43,11 +47,31 @@
             &:nth-child(3) {
                 width: 20%;
                 padding-top: 90px;
+                &:before {
+                    content: "\0020";
+                    display: block;
+                    position: absolute;
+                    z-index: 1;
+                    top: 12px;
+                    left: 4px;
+                    width: 555px;
+                    height: 640px;
+                    background-image: url(images/footer_logo.png);
+                    background-repeat: no-repeat;
+                    background-position: 0 0;
+                }
             }
         }
+
         h4 {
             padding-bottom: 5px;
             border-bottom: 1px solid $color-light-grey;
         }
+
+        a {
+            padding: 1px;
+        }
+
     }
+
 }

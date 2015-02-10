@@ -2,8 +2,8 @@
 'use strict';
 
     // Mobile Menu Toggle
-    $('.global-nav .toggle').click(function(e){
-        $('.global-nav').toggleClass('active');
+    $('.mobile-menu .toggle').click(function(e){
+        $('.mobile-menu').toggleClass('active');
         e.preventDefault();
     });
 
