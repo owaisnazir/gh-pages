@@ -18,8 +18,8 @@
                     $locs->the_post();
 
                     echo '<h5>' . get_the_title() . '</h5>';
-                    echo '<p>' . get_field('address') . '<br/>';
-                    echo get_field('phone') . '<br/>';
+                    echo '<p>' . get_field('address') . '<br />';
+                    echo get_field('phone') . '<br />';
                     echo '<a href="mailto:' . get_field('email') . '">' . get_field('email') . '</a></p>';
                 }
                 ?>
@@ -30,17 +30,20 @@
 
                 <h4><a href="<?php bloginfo('url') ?>/practice-area/">Practice Areas</a></h4>
 
-                <ul class="menu">
-                    <?php
+                <nav class="practice-nav">
 
-                    wp_list_pages( array(
-                        'post_type' => 'practice-area',
-                        'title_li' => ''
-                    ) );
+                    <ul class="menu">
+                        <?php
 
-                    ?>
-                </ul>
+                        wp_list_pages( array(
+                            'post_type' => 'practice-area',
+                            'title_li' => ''
+                        ) );
 
+                        ?>
+                    </ul>
+
+                </nav>
 
             </div><!-- .footer-col -->
 
