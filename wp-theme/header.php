@@ -49,6 +49,8 @@
 
             <h1 class="branding"><a href="<?php bloginfo('url') ?>"><img src="<?php bloginfo('template_directory') ?>/images/macelree_logo.png" alt="MacElree Harvey" /></a></h1>
 
+            <p class="mobile-links"><a href="/contact-us/">Contact Us</a></p>
+
             <div class="mobile-menu">
 
                 <a class="toggle" href="#"><span class="visually-hidden">Menu</span><span aria-hidden="true" class="icon-menu icon"></span></a>

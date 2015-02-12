@@ -454,28 +454,22 @@
 }
 
 // Contact Page
-.contact-cards {
+.contact-card {
+    display: block;
+    width: 100%;
     margin: $gutter-large 0;
-    padding: 0 $gutter-large;
-    @media (min-width: $mq-min-large) {
-        padding: 0;
+    padding: 1px 0;
+    background-color: $color-light-blue;
+    border-radius: 6px;
+
+    h5,
+    p {
+        padding: 0 15px;
     }
-    .contact-card {
-        display: inline-block;
-        vertical-align: top;
+
+    iframe {
         width: 100%;
-        margin: 0 0 20px;
-        padding: 0;
-        background-color: $color-light-blue;
-        border-radius: 6px;
-        h5,
-        p {
-            padding: 0 15px;
-        }
-        iframe {
-            width: 100%;
-            height: 200px;
-        }
+        height: 200px;
     }
 }
 

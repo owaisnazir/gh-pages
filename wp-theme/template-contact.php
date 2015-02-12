@@ -46,11 +46,13 @@ $hide_sidebar = get_field('hide_sidebar');
 
                     $addy = str_replace('<br />', ', ', $addy);
 
+                    echo '<div class="contact-card">';
                     echo '<h5>' . get_the_title() . '</h5>';
                     echo '<p>' . get_field('address') . '<br/>';
                     echo get_field('phone') . '<br/>';
                     echo '<a href="mailto:' . get_field('email') . '">' . get_field('email') . '</a></p>';
                     echo '<iframe src="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=' . urlencode($addy) . '&amp;ie=UTF8&amp;z=14&amp;output=embed" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="300" height="300"></iframe>';
+                    echo '</div>';
                 }
 
                 wp_reset_query();
