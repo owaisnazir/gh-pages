@@ -95,17 +95,31 @@
 
                 if( have_rows('videos') ){
 
+                    echo '<script src="' . get_bloginfo('template_directory') . '/js/vendor/jquery.fancybox.pack.js"></script>';
+                    echo '<script src="' . get_bloginfo('template_directory') . '/js/vendor/jquery.fancybox-media.js"></script>';
+
                     echo '<h3>Videos</h3>';
-                    echo '<ul>';
+                    echo '<ul class="vids">';
 
                     // loop through the rows of data
                     while ( have_rows('videos') ) : the_row();
 
-                        echo '<li><a href="http://youtube.com/watch?v=' . get_sub_field('youtube_id') . '">' . get_sub_field('video_title') . '</a>';
+                        echo '<li><a rel="gallery1" href="http://youtube.com/watch?v=' . get_sub_field('youtube_id') . '">' . get_sub_field('video_title') . '</a>';
 
                     endwhile;
 
                     echo '<ul>';
+                    ?>
+                    <script>
+                        $('.vids a').fancybox({
+                            openEffect  : 'none',
+                            closeEffect : 'none',
+                            helpers : {
+                                media : {}
+                            }
+                        });
+                    </script>
+                    <?php
 
                 }
 
